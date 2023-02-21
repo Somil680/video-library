@@ -1,0 +1,20 @@
+.Sidebars{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 586px;
+  position: fixed;
+  left: 0px;
+  background-color: var(--nav-color);
+  color: white;
+}
+.bars-icon{
+    font-size: 30px;
+}
+.bars-icon-div{
+    margin: 20px 0px;
+    
+}
+.sidebars-p-tag {
+    margin: 0px;
+}

@@ -10,6 +10,8 @@ export const videos = [
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     creator: "Soham Shah",
+    modal: false,
+    iframeId : "Wo5dMEP_BbI"
   },
   {
     _id: "F_Riqjdh2oM",
@@ -17,18 +19,24 @@ export const videos = [
     creator: "Sentdex",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    modal: false,
+    iframeId : "F_Riqjdh2oM"
   },
   {
     _id: "vP3TRAsjZss",
     title:"Front-End vs Back-End " ,
     creator:"Apna Collage" ,
-    description:"Front End vs Back End - Which one is good for you ?" ,
+    description: "Front End vs Back End - Which one is good for you ?",
+    modal: false,
+    iframeId:  "vP3TRAsjZss"
   },
   {
     _id: "3sSGmA1ZjD8" ,
     title: "How to get hired as Frontend Developer" ,
     creator:" Anshika" ,
-    description : "How to get hired as Frontend Developer in 2022 ft. @akshaymarch7 | Learn Web Development| Anshika" ,
+    description: "How to get hired as Frontend Developer in 2022 ft. @akshaymarch7 | Learn Web Development| Anshika",
+     modal: false,
+  iframeId: "3sSGmA1ZjD8"
   },
   {
     _id: "m050iy5_2ng",
