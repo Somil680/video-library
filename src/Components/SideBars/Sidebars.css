@@ -1,15 +1,16 @@
 .Sidebars{
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 77px;
   height: 586px;
   position: fixed;
+  top: 59px;
   left: 0px;
   background-color: var(--nav-color);
   color: white;
 }
 .bars-icon{
-    font-size: 30px;
+    font-size: 20px;
 }
 .bars-icon-div{
     margin: 20px 0px;
@@ -17,4 +18,5 @@
 }
 .sidebars-p-tag {
     margin: 0px;
+    font-size: 11px;
 }

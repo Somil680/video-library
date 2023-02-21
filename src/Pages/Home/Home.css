@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(15,15,15);
+    color: white;
+    
+}
+    .Vedio-container{
+        /* border: 1px solid; */
+        width: 320px;
+        
+    }
+.video-grid{
+    margin-left: 90px;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.video-image{
+    border-radius: 10px;
+}
