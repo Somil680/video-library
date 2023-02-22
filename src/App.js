@@ -7,7 +7,7 @@ import { Home } from "./Pages";
 function App() {
  
   return (
-    <div className="App">
+    <div >
      <Navbar/>
      <Sidebars/>
      

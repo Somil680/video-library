@@ -20,6 +20,7 @@
     display: flex;
     border: none;
     align-items: center;
+    margin-top: 4px;
 }
 #search{
     border: 1px solid var(--btn-color);
@@ -27,7 +28,7 @@
     background-color: var(--nav-color);
     color: var(--text-color);
     padding: 13px;
-    width: 350px;
+    width: 450px;
     border-top-left-radius:20px ;
     border-bottom-left-radius:20px ;
 }
@@ -44,6 +45,16 @@
     align-items: center;
     justify-content: center;
     background-color: var(--btn-color);
+        margin-left: 1px;
+}
+.mic-icon{
+width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--btn-color);
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 .icon{
     font-size: 25px;
@@ -57,6 +68,14 @@
 }
 .brand{
     margin-left: 31px;
+    display: flex;
+    align-items: center;
+}
+.Faplay-icon{
+    padding: 6px 14px 4px 15px;
+    border-radius: 10px;
+    background-color: red;
+    margin-right: 10px;
 }
 .nav-bar-icon{
     font-size: 20px;
