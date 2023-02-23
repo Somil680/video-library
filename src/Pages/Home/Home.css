@@ -30,4 +30,16 @@ body{
 }
 .margin0{
     margin: 0px;
+   
 }
+.Link{
+     text-decoration: none;
+    color: white; 
+}
+/* .DotsVertical{
+   display: none;
+}
+.DotsVertical:hover{
+    border: 1px solid;
+ display: block;
+} */

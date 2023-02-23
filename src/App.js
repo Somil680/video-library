@@ -1,17 +1,20 @@
 import "./App.css";
-import { Navbar, Sidebars } from "./Components";
-import { Home } from "./Pages";
 
+import { Home, Videoshow } from "./Pages";
+import { Routes , Route } from "react-router-dom";
 
 
 function App() {
  
   return (
     <div >
-     <Navbar/>
-     <Sidebars/>
+   
      
-      <Home/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/watch=/:videoId" element={<Videoshow/>}/>
+    </Routes>
+     
     </div>
   );
 }

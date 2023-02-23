@@ -11,6 +11,8 @@
 }
 .bars-icon{
     font-size: 20px;
+    text-decoration: none;
+    color: white;
 }
 .bars-icon-div{
     margin: 20px 0px;
