@@ -1,1 +1,2 @@
-export {videoReducer} from "./videoReducer"
+export { videoReducer } from "./videoReducer"
+export {filterReducder} from "./filterReducer"

@@ -50,10 +50,14 @@
 .recommend-videos-container{
   margin: 0px 20px;
     display: flex;
+    justify-content: space-between;
     padding: 0px 0px 12px 0px;
 }
 .video-image-recommend{
   width: 168px;
   height: 94px;
   border-radius: 10px ;
+}
+.video--recommend{
+  display: flex;
 }

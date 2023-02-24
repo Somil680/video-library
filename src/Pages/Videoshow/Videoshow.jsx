@@ -16,9 +16,9 @@ return (<>
     <div>
       <Navbar />
       <Sidebars />
-        <div>
+        <div className='videoshowview-container'> 
             <VideoshowView videos={videosIdFind} videoId={videoId} />
-            <RecommendVideo/>
+            <RecommendVideo videos={videosIdFind} videoId={videoId} />
         </div>
         
     </div>

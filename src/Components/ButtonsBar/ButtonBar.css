@@ -1,0 +1,30 @@
+/* .filter-btn{
+    padding: 5px 10px;
+    border-radius: 10px;
+    min-width: 59px;
+    margin: 5px 7px;
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+} */
+.radio-button {
+    display: none;
+    /* hide the radio button itself */
+}
+
+label {
+    display: inline-block;
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    min-width: 59px;
+    margin: 5px 7px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .radio-button:checked+label {
+    background-color: #3366ff;
+    color: white;
+} */
