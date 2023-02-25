@@ -3,9 +3,9 @@ import "./Home.css"
 import { HiDotsVertical } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 
-const VideoView = ({video}) => {
+const VideoView = ({videos}) => {
  
-    const { _id, iframeId, title, creator , } = video
+    const { _id, iframeId, title, creator , } = videos
     
 
 return (<>

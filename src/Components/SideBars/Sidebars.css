@@ -19,8 +19,15 @@
     display: flex;
     flex-direction: column;
      align-items: center;
-    
+    padding: 10px;
 }
+.bars-icon-div:hover{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--btn-bg-color);
+        
+}
+
 .sidebars-p-tag {
     margin: 0px;
     font-size: 11px;

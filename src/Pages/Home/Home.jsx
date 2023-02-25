@@ -8,7 +8,7 @@ import { useFilter } from '../../context';
 const Home = () => {
    const { videoState } = useVideos()
    const {filterState} =useFilter()
-   const  videodata  = [...videoState.video]
+   const  videodata  = [...videoState.videos]
    const categorydata = CategoryFilter([...videodata] , filterState.Category)
 //   console.log(videodata)
 //   console.log(categorydata)
@@ -20,7 +20,7 @@ return (<>
       <div className='video-grid-container'>
          <ButtonBar/>
             <div className='video-grid'>
-               {categorydata.map((items) => (<VideoView video={items} key={items._id} /> ))}
+               {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
             </div>
       </div>
   </div>      

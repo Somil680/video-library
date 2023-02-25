@@ -5,7 +5,7 @@ import { videoReducer } from "../reducer";
 const videoContext = createContext()
 
 const VedioProvider = ({children}) => {
-    const [videoState, videoDispatch] = useReducer(videoReducer, { video: [] })
+    const [videoState, videoDispatch] = useReducer(videoReducer, { videos: [] })
     useEffect(() => {
         const fetchVideos = async () => {
           try {

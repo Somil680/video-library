@@ -1,7 +1,15 @@
-.App {
-  text-align: center;
+:root {
+  --nav-color: rgb(15, 15, 15);
+  --text-color: rgb(255, 255, 255);
+  --btn-color: rgb(34, 34, 34);
+  --btn-bg-color: rgb(63, 63, 63);
+  --btn-bg-hover : rgb(44, 43, 43);
 }
-
+.App {
+     
+        font-family: Roboto, Arial, sans-serif;
+}
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,4 +56,4 @@
   color: #d9d9d9;
   font-size: 1.2rem;
   margin: 1rem;
-}
+} */

@@ -14,7 +14,8 @@
 .video-discription{
     background-color: var(--btn-bg-color);
       border-radius: 10px;
-      padding: 20px 10px;
+      padding: 7px 5px;
+          margin-top: 13px;
 }
 .Font{
   font-size: 15px;
@@ -25,9 +26,25 @@
         justify-content: space-between;
         align-items: center;
 }
+.all-btn-container{
+  display: flex;
+  align-items: center;
+}
+.onclick-btn-continer-main{
+  display: flex;
+}
+.onclick-btn-container{
+padding: 5px;
+  background-color: var(--btn-bg-color);
+  margin-left: 10px;
+  border-radius: 43px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .btn-container{
-      
-     
         border-radius: 19px;
         display: flex;
         justify-content: space-between;
@@ -38,6 +55,9 @@
         display: flex;
         align-items: center;
 }
+.btn-hover:hover{
+ background-color: var(--btn-bg-hover);
+}
 .vertical-line {
       width: 0px;
         height: 28px;
@@ -45,6 +65,18 @@
         background-color: white;
         display: inline-block;
         margin: 5px 2px;
+}
+.Showmore-btn:hover{
+
+  border-radius: 29px;
+  width: fit-content;
+  padding: 5px 10px;
+  background-color: var(--btn-bg-hover);
+  }
+  .Showmore-btn{
+      border-radius: 29px;
+        width: fit-content;
+        padding: 5px 10px;
 }
 /* ------------RECOMMEND----------- */
 .recommend-videos-container{
