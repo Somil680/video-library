@@ -1,14 +1,16 @@
 import React from 'react';
  import "./WatchLator.css"
 import { Link } from 'react-router-dom';
-import { HiDotsVertical } from "react-icons/hi";
-
-function WatchlatorView({watchVideos}) {
+import { MdDelete } from "react-icons/md";
+import { useWatchLator } from '../../context';
+function WatchlatorView({ watchVideos }) {
+    const { watchState, watchDispatch } = useWatchLator()
+    const {watchlatorItem} = watchState
         const {_id , title , iframeId , publishedAt , creator } = watchVideos
     return (<>
         <div className="watchlator-videos">
-<Link key={_id} to={`/watch=/${_id}`} className="Link">
     <div key={_id} className="watchlator-videos-container">
+<Link key={_id} to={`/watch=/${_id}`} className="Link">
         <div className='video--recommend'>
             <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image-recommend' />
             <div className='video-detail-watchlator'>
@@ -18,11 +20,12 @@ function WatchlatorView({watchVideos}) {
              
             </div> 
         </div>    
-            <span className='DotsVertical'> 
-                <HiDotsVertical className='bars-icon  '/>
-            </span> 
+        </Link>    
+        <span className='delete'
+         onClick={()=> watchDispatch({type: "REMOVE-TO-WATCH-LATOR" ,payload: _id})}> 
+            <MdDelete className='bars-icon  '/>
+        </span> 
     </div>
-</Link>    
 </div>
     </>)
 }

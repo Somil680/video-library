@@ -63,3 +63,16 @@
 .watchlator-videos{
         width: 717px;
 }
+.delete:hover{
+height: 20px;
+width: 20px;
+padding: 10px;
+border-radius: 44px;
+background-color: var(--btn-bg-color);
+
+}
+.delete{
+    height: fit-content;
+     padding: 10px;
+     border-radius: 44px;
+}

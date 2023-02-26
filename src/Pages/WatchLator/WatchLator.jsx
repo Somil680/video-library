@@ -7,22 +7,22 @@ import {WatchlatorView} from "./WatchlatorView"
 import { WatchlatorFirst } from './WatchlatorFirst';
 
 function WatchLator() {
+
     const { watchState } = useWatchLator()
     const { watchlatorItem } = watchState
     
-    console.log(watchlatorItem)
+    console.log(watchlatorItem.length)
       const FirstVideo =[ watchlatorItem[0] ]
     console.log(FirstVideo)
-    
+     
 return(<>
     <Navbar />
     <Sidebars />
-
-    
+ 
     <div className='watchlator-container'>
 
         <div className='first-video-show'  >
-            {FirstVideo.map((item) => (<WatchlatorFirst Firstvideo={item} key={item._id} Noofvideos={watchlatorItem } />))}
+            {FirstVideo.map((item) => (<WatchlatorFirst Firstvideo={item}  Noofvideos={watchlatorItem } />))}
         </div>
         <div  className='watchlator-videos'>
              {watchlatorItem.map((item) => (<WatchlatorView watchVideos={item} key={item._id} />))}
