@@ -21,13 +21,21 @@ const Sidebars = () => {
                     <p className='sidebars-p-tag' >Watchlator</p>
         </div>
                </Link >
-        <div className='bars-icon-div' >
-             <span className='bars-icon'><MdPlaylistAdd />       </span> 
-             <p className='sidebars-p-tag' >Playlist</p>
+       <div className='bars-icon-div' >
+                 <Link to="/playlist" className='Link'>         
+              <span className='bars-icon'>
+                     <MdPlaylistAdd />
+                     <p className='sidebars-p-tag' >Playlist</p>
+                                </span> 
+                                </Link>
         </div>
-        <div className='bars-icon-div' >
-             <span className='bars-icon'><MdOutlineVideoLibrary/></span> 
-             <p className='sidebars-p-tag' >Library</p>
+       <div className='bars-icon-div' >
+                  <Link to="/library" className='Link'>        
+              <span className='bars-icon'>
+                     <MdOutlineVideoLibrary />
+                     <p className='sidebars-p-tag' >Library</p>
+                         </span> 
+                         </Link>
         </div>
 
         </div>

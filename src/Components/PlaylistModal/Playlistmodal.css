@@ -1,0 +1,13 @@
+.modal-container{
+        border: 1px solid;
+            position: absolute;
+top: 35%;
+    left: 43%;
+    width: 238px;
+    height: 274px;
+    background-color: var(--nav-color);
+
+}
+.colorname{
+    color: white;
+}

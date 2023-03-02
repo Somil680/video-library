@@ -1,0 +1,13 @@
+.work-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 23px;
+    width: 100%;
+    align-items: center;
+
+}
+
+.work-empty {
+    width: 53%;
+}

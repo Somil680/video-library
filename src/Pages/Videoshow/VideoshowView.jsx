@@ -3,15 +3,16 @@ import "./Videoshow.css"
 import ReactPlayer from 'react-player/lazy'
 import { AiOutlineLike ,AiOutlineDislike } from "react-icons/ai"
 import { MdOutlineWatchLater , MdPlaylistAdd ,MdDone } from 'react-icons/md'
-import { useWatchLator } from '../../context';
+import { usePlaylist, useWatchLator } from '../../context';
 import { findInArray } from '../../Utilis/find';
+
 
 function VideoshowView({ videos, videoId }) {
     
 const [isExpanded, setIsExpanded] = useState(false)
 function toggleExpanded() {setIsExpanded(!isExpanded)}
 
-const {_id , iframeId , title , description , creator , publishedAt} = videos
+const {_id , iframeId , title , description , creator , publishedAt } = videos
 const { watchState, watchDispatch } = useWatchLator()
 const {watchlatorItem} =watchState
 console.log(watchlatorItem)
@@ -21,26 +22,27 @@ const watchHandler = ( videos , _id) => {
     if (isInWatchlator) {
         watchDispatch({
             type: "REMOVE-TO-WATCH-LATOR",
-             payload: _id
-            })
-   
+            payload: _id
+        })
+        
     } else {
         watchDispatch({
             type: "SAVE-TO-WATCH-LATOR",
-             payload: videos
-            })
-        }
-    }  
-
-
+            payload: videos
+        })
+    }
+    } 
 
     
+    const {  playlistDispatch } = usePlaylist()
+ 
+    
 return (<>
-
+   
 <div key={videoId}>
         <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} />
         {/* <iframe width="640" height="385" src={`https://www.youtube.com/embed/${iframeId}`}allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>  */}
-    <h2>{title}</h2>
+        <h2>{title}</h2>
         <div className='videoshowview-middle-container'>
         <h3 className='margin0'>{creator}</h3>
         
@@ -55,7 +57,7 @@ return (<>
             <span className='onclick-btn-container btn-hover' onClick={() => watchHandler(videos , _id )}>
                {isInWatchlator ? <MdDone className='bars-icon'/> :  <MdOutlineWatchLater className='bars-icon' />}        
             </span>
-            <span className='onclick-btn-container btn-hover'><MdPlaylistAdd  className='bars-icon'/></span>
+            <span className='onclick-btn-container btn-hover' onClick={()=>playlistDispatch({type: "OPEN-MODAL" })}><MdPlaylistAdd  className='bars-icon'/></span>
         </div>
         </div>
     </div>
@@ -69,5 +71,3 @@ return (<>
 </>)  
 }
 export {VideoshowView}
-
-{/* <iframe src="https://www.youtube.com/embed/lyey41gFPtI"  frameBorder="0" allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}

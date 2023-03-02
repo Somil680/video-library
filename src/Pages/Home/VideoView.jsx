@@ -2,15 +2,23 @@ import React from 'react';
 import "./Home.css"
 import { HiDotsVertical } from "react-icons/hi";
 import { Link } from 'react-router-dom';
-
+import { useHistory } from '../../context';
 const VideoView = ({videos}) => {
- 
-    const { _id, iframeId, title, creator , } = videos
+     const {historyDispatch} = useHistory()
+    const { _id, iframeId, title, creator, } = videos
+
+    
+    function historyHandler() {
+        historyDispatch({
+            type: "ADD-TO-HISTORY",
+            payload : videos
+        })
+    }
     
 
 return (<>
 <div className="Vedio-container" key={_id}>
-    <Link to={`/watch=/${_id }`} className="Link">
+    <Link to={`/watch=/${_id }`} className="Link" onClick={historyHandler}>
         <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image' />
         <div className='video-detail'>
         <span className='content-detail'>

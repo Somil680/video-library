@@ -1,3 +1,5 @@
-export { videoReducer } from "./videoReducer"
+export { videoReducer   } from "./videoReducer"
 export { filterReducder } from "./filterReducer"
-export {watchReducer} from "./watchReducer"
+export { watchReducer   } from "./watchReducer"
+export { playlistReducer } from "./playlistReducer"
+export {historyReducer}  from "./historyReducer"
