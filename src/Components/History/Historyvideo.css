@@ -1,0 +1,12 @@
+.main-history-body-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.history-video-container{
+    width: 210px;
+}
+.history-video-image{
+    width: 210px;
+    height: 118px;
+    border-radius: 10px;
+}

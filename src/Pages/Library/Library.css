@@ -1,0 +1,25 @@
+
+.Library-container{
+        margin-top: 80px;
+            margin-left: 95px;
+}
+.hr-line{
+
+        border: 1px solid var(--btn-bg-color);
+}
+.text-color{
+    color: rgb(113 111 111);
+        margin-left: 20px;
+}
+.browse-link{
+    text-decoration: none;
+        color: rgb(85 85 255);
+}
+.top-heading-icon{
+display: flex;
+    align-items: center;
+    width: 144px;
+}
+.margin{
+    margin-left:20px ;
+}

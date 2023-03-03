@@ -6,8 +6,8 @@ import {VedioProvider} from "./context/videoContext"
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from "react-router-dom";
 import { FilterProvider } from "./context";
-import { WatchlatorProvider ,PlaylistProvider } from "./context/index"
-import  {HistoryProvider} from "./context/index"
+import { WatchlatorProvider ,PlaylistProvider ,HistoryProvider ,LikeProvider } from "./context/index"
+
 
 // Call make Server
 makeServer();
@@ -16,6 +16,7 @@ const root = createRoot(container);
 root.render(
     <Router>
         <PlaylistProvider>
+            <LikeProvider>
             <HistoryProvider>
     <WatchlatorProvider>
         <FilterProvider>
@@ -24,7 +25,8 @@ root.render(
             </VedioProvider>,
         </FilterProvider>
             </WatchlatorProvider>
-            </HistoryProvider>
+                </HistoryProvider>
+                </LikeProvider>
             </PlaylistProvider>
 </Router>
 );

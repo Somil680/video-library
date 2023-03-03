@@ -1,0 +1,14 @@
+.main-like-body-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.like-video-container {
+    width: 210px;
+}
+
+.like-video-image {
+    width: 210px;
+    height: 118px;
+    border-radius: 10px;
+}

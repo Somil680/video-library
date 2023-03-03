@@ -3,7 +3,8 @@ import "./App.css";
 import { Home, Videoshow, WatchLator } from "./Pages";
 import { Routes , Route } from "react-router-dom";
 import { useWatchLator } from "./context";
-import { Empty, PlaylistModal, UnderConstruction } from "./Components";
+import { Empty, PlaylistModal } from "./Components";
+import { Library } from "./Pages/Library/Library";
 
 function App() {
  const { watchState } = useWatchLator()
@@ -20,7 +21,7 @@ function App() {
            watchlatorItem.length ===0 ? <Empty/> : <WatchLator /> 
         } />
         <Route path="/playlist" element={<PlaylistModal/>} />
-        <Route path="/library" element={<UnderConstruction/>} />
+        <Route path="/library" element={<Library/>} />
          </Routes>
      
     </div>

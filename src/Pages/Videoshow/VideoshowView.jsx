@@ -1,44 +1,57 @@
 import React, { useState } from 'react';
 import "./Videoshow.css"
 import ReactPlayer from 'react-player/lazy'
-import { AiOutlineLike ,AiOutlineDislike } from "react-icons/ai"
+import { AiOutlineLike,AiFillLike ,AiOutlineDislike ,AiFillDislike } from "react-icons/ai"
 import { MdOutlineWatchLater , MdPlaylistAdd ,MdDone } from 'react-icons/md'
-import { usePlaylist, useWatchLator } from '../../context';
+import { useLike, usePlaylist, useWatchLator } from '../../context';
 import { findInArray } from '../../Utilis/find';
-
 
 function VideoshowView({ videos, videoId }) {
     
+// const [isClicked, setIsClicked] = useState(false)
+// function dislikeHandler(){setIsClicked(!isClicked)}
 const [isExpanded, setIsExpanded] = useState(false)
-function toggleExpanded() {setIsExpanded(!isExpanded)}
-
-const {_id , iframeId , title , description , creator , publishedAt } = videos
+function toggleExpanded(){setIsExpanded(!isExpanded)}
+    
+const { _id, iframeId, title, description, creator, publishedAt } = videos
+    
 const { watchState, watchDispatch } = useWatchLator()
-const {watchlatorItem} =watchState
-console.log(watchlatorItem)
-
+const {watchlatorItem} = watchState
 const isInWatchlator = findInArray(_id ,watchlatorItem)
 const watchHandler = ( videos , _id) => {
     if (isInWatchlator) {
         watchDispatch({
-            type: "REMOVE-TO-WATCH-LATOR",
-            payload: _id
+        type: "REMOVE-TO-WATCH-LATOR", payload: _id
+        })    
+    } else {
+        watchDispatch({
+        type: "SAVE-TO-WATCH-LATOR",payload: videos
+        })
+    }
+} 
+
+const { likeState, likeDispatch } = useLike()
+const { likeItem } = likeState
+
+const isInLike = findInArray(_id , likeItem)
+    const likeHandler = (videos , _id) => {
+        if (isInLike) {
+        likeDispatch({
+            type: "REMOVE-TO-LIKE",
+            payload : _id
         })
         
     } else {
-        watchDispatch({
-            type: "SAVE-TO-WATCH-LATOR",
-            payload: videos
+        likeDispatch({
+            type: "ADD-TO-LIKE",
+            payload : videos
         })
     }
-    } 
+    }
 
     
-    const {  playlistDispatch } = usePlaylist()
- 
-    
+const {  playlistDispatch } = usePlaylist()
 return (<>
-   
 <div key={videoId}>
         <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} />
         {/* <iframe width="640" height="385" src={`https://www.youtube.com/embed/${iframeId}`}allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>  */}
@@ -48,15 +61,20 @@ return (<>
         
         <div className='all-btn-container'>
         <div className='btn-container'>
-            <span className='like-btn btn-hover'><AiOutlineLike className='bars-icon' />&nbsp;65.4K</span>
+            <span className='like-btn btn-hover' onClick={() => likeHandler(videos, _id)}>
+            {isInLike ? <AiFillLike  className='bars-icon'/> :<AiOutlineLike className='bars-icon' /> }      
+             &nbsp;65.4K
+            </span>
             <div className="vertical-line"></div>
-            <span className='like-btn btn-hover'><AiOutlineDislike className='bars-icon' /></span>
+                    <span className='like-btn btn-hover'><AiOutlineDislike className='bars-icon' />
+                        {/* onClick={dislikeHandler()}> */}
+            {/* {isClicked ?<AiOutlineDislike className='bars-icon' /> : <AiFillDislike className='bars-icon' />} */}
+            </span>
         </div>
         
         <div className='onclick-btn-continer-main'>
             <span className='onclick-btn-container btn-hover' onClick={() => watchHandler(videos , _id )}>
-               {isInWatchlator ? <MdDone className='bars-icon'/> :  <MdOutlineWatchLater className='bars-icon' />}        
-            </span>
+            {isInWatchlator ?<MdDone className='bars-icon'/>:<MdOutlineWatchLater className='bars-icon'/>}  </span>
             <span className='onclick-btn-container btn-hover' onClick={()=>playlistDispatch({type: "OPEN-MODAL" })}><MdPlaylistAdd  className='bars-icon'/></span>
         </div>
         </div>

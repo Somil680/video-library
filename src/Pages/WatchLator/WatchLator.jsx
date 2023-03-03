@@ -9,13 +9,15 @@ import { WatchlatorFirst } from './WatchlatorFirst';
 function WatchLator() {
 
     const { watchState } = useWatchLator()
+    const { watchlatorItem } = watchState
+    const FirstVideo = [watchlatorItem[0]]
+    // console.log(watchlatorItem.length)
+    // console.log(FirstVideo)
+    
+
     const { historyState } = useHistory()
     const {historyItem} = historyState
-    const { watchlatorItem } = watchState
      console.log(historyItem)
-    console.log(watchlatorItem.length)
-      const FirstVideo =[ watchlatorItem[0] ]
-    console.log(FirstVideo)
      
 return(<>
     <Navbar />
