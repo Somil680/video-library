@@ -26,7 +26,7 @@ function Videoshow() {
   
 return (<>
 <div>
-  <Navbar />
+  {/* <Navbar /> */}
   <Sidebars />
     {playlistState.isModal ? <PlaylistModal videos /> : <p></p>}
     

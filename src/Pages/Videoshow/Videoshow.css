@@ -116,7 +116,7 @@ padding: 5px;
     --player-height: 220px;
   }
 .videoshowview-container {
-      margin-top: 100px;
+      /* margin-top: 100px; */
       display: flex;
       flex-direction: column;
   
