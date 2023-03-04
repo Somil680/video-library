@@ -7,6 +7,8 @@ import { useLike, usePlaylist, useWatchLator } from '../../context';
 import { findInArray } from '../../Utilis/find';
 
 function VideoshowView({ videos, videoId }) {
+
+
     
 // const [isClicked, setIsClicked] = useState(false)
 // function dislikeHandler(){setIsClicked(!isClicked)}
@@ -53,8 +55,15 @@ const isInLike = findInArray(_id , likeItem)
 const {  playlistDispatch } = usePlaylist()
 return (<>
 <div key={videoId}>
-        <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} />
-        {/* <iframe width="640" height="385" src={`https://www.youtube.com/embed/${iframeId}`}allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>  */}
+    <div >
+    <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} className="video_player"
+    width='--player-width' height="--player-height" />
+    {/* <iframe src={`https://www.youtube.com/embed/${iframeId}`}allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>  */}
+    </div>
+        
+<div className='all-text-content'>
+            
+
         <h2>{title}</h2>
         <div className='videoshowview-middle-container'>
         <h3 className='margin0'>{creator}</h3>
@@ -85,7 +94,7 @@ return (<>
             <h4 className='margin0 Showmore-btn btn-hover' onClick={toggleExpanded}>{isExpanded ? "Show Less" : "Show More"}</h4>
 </div>
 </div>
-
+</div>
 </>)  
 }
 export {VideoshowView}

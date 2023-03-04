@@ -25,21 +25,21 @@ function Videoshow() {
   
   
 return (<>
-    <div>
-      <Navbar />
-    <Sidebars />
-         {playlistState.isModal ? <PlaylistModal  videos /> : <p></p>}
-        <div className='videoshowview-container'> 
-            <div className='Videoplay-container'> 
-             {videos.map((item) =>(<VideoshowView videos={item} videoId={videoId} key={item._id} />  ))   }
-            </div>
-            <div className="recommend-videos">
-          {Finalrecommendvideo.map((items) =>( <RecommendVideo videos={items} key={items._id} />))}
-           
-            </div>
-        </div>
-        
+<div>
+  <Navbar />
+  <Sidebars />
+    {playlistState.isModal ? <PlaylistModal videos /> : <p></p>}
+    
+<div className='videoshowview-container'> 
+    <div className='Videoplay-container'> 
+        {videos.map((item) =>(<VideoshowView videos={item} videoId={videoId} key={item._id} />  ))   }
     </div>
+    <div className="recommend-videos">
+        {Finalrecommendvideo.map((items) =>( <RecommendVideo videos={items} key={items._id} />))}
+    </div>
+</div>
+        
+</div>
 </>)
 }
 export{Videoshow}

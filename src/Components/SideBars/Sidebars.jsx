@@ -9,32 +9,33 @@ const Sidebars = () => {
     return (<>
         <div className='Sidebars'>
 
-       <div className='bars-icon-div' >
 <Link to="/" className='Link'>
+       <div className='bars-icon-div' >
               <span className='bars-icon'><AiOutlineHome /></span> 
               <p className='sidebars-p-tag' >Home</p>
-</Link> 
        </div>
-       <div className='bars-icon-div' >
+</Link> 
 <Link to="/watchlator" className='Link'>
+       <div className='bars-icon-div' >
               <span className='bars-icon'><MdOutlineWatchLater /> </span>
               <p className='sidebars-p-tag' >Watchlator</p>
-</Link >
         </div>
-       <div className='bars-icon-div' >
+</Link >
 <Link to="/playlist" className='Link'>         
+       <div className='bars-icon-div' >
               <span className='bars-icon'><MdPlaylistAdd />
               </span> 
               <p className='sidebars-p-tag' >Playlist</p>
-</Link>
        </div>
-       <div className='bars-icon-div' >
+</Link>
 <Link to="/library" className='Link'>        
+       <div className='bars-icon-div' >
               <span className='bars-icon'>
               <MdOutlineVideoLibrary /></span> 
               <p className='sidebars-p-tag' >Library</p>
-</Link>
         </div>
+</Link>
+
 </div>
 </>)
 }

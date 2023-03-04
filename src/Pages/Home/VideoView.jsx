@@ -19,8 +19,10 @@ function historyHandler() {
 }
 
 return (<>
-<div className="Vedio-container" key={_id}>
-    <Link to={`/watch=/${_id }`} className="Link" onClick={()=>historyHandler()}>
+    <div className="main-video-container" key={_id}>
+        
+        <Link to={`/watch=/${_id}`} className="Link" onClick={() => historyHandler()}>
+            
         <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image' />
         <div className='video-detail'>
         <span className='content-detail'>
