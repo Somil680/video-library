@@ -6,8 +6,8 @@ import { useHistory } from '../../context';
 import { findInArray } from '../../Utilis/find';
 const VideoView = ({videos}) => {
 const { _id, iframeId, title, creator, } = videos
-const {historyState , historyDispatch } = useHistory(const {historyItem} = historyState
-
+const {historyState , historyDispatch } = useHistory()
+const {historyItem} = historyState
 const isInHistory  = findInArray(_id , historyItem)
 function historyHandler() {
     if (!isInHistory) {  

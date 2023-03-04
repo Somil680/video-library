@@ -9,36 +9,33 @@ const Sidebars = () => {
     return (<>
         <div className='Sidebars'>
 
-               <Link to="/" className='Link'>
-        <div className='bars-icon-div' >
-                    <span className='bars-icon'><AiOutlineHome /></span> 
-                    <p className='sidebars-p-tag' >Home</p>
-        </div>
-               </Link> 
-               <Link to="/watchlator" className='Link'>
-        <div className='bars-icon-div' >
-                    <span className='bars-icon'><MdOutlineWatchLater /> </span>
-                    <p className='sidebars-p-tag' >Watchlator</p>
-        </div>
-               </Link >
        <div className='bars-icon-div' >
-                 <Link to="/playlist" className='Link'>         
-              <span className='bars-icon'>
-                     <MdPlaylistAdd />
-                     <p className='sidebars-p-tag' >Playlist</p>
-                                </span> 
-                                </Link>
+<Link to="/" className='Link'>
+              <span className='bars-icon'><AiOutlineHome /></span> 
+              <p className='sidebars-p-tag' >Home</p>
+</Link> 
+       </div>
+       <div className='bars-icon-div' >
+<Link to="/watchlator" className='Link'>
+              <span className='bars-icon'><MdOutlineWatchLater /> </span>
+              <p className='sidebars-p-tag' >Watchlator</p>
+</Link >
         </div>
        <div className='bars-icon-div' >
-                  <Link to="/library" className='Link'>        
+<Link to="/playlist" className='Link'>         
+              <span className='bars-icon'><MdPlaylistAdd />
+              </span> 
+              <p className='sidebars-p-tag' >Playlist</p>
+</Link>
+       </div>
+       <div className='bars-icon-div' >
+<Link to="/library" className='Link'>        
               <span className='bars-icon'>
-                     <MdOutlineVideoLibrary />
-                     <p className='sidebars-p-tag' >Library</p>
-                         </span> 
-                         </Link>
+              <MdOutlineVideoLibrary /></span> 
+              <p className='sidebars-p-tag' >Library</p>
+</Link>
         </div>
-
-        </div>
+</div>
 </>)
 }
 export {Sidebars}

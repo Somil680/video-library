@@ -3,22 +3,23 @@ body{
     color: var(--text-color);
     
 }
+.video-grid-container{
+    /* margin-left: 90px; */
+    margin-top: 70px;
+}
+.video-grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+
+
     .Vedio-container{
 
         width: 335px;
         margin: 10px 10px 20px 10px;
         
     }
-.video-grid{
-
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-.video-grid-container{
-    margin-left: 90px;
-    margin-top: 70px;
-
-}
 .video-image{
     width: 332.99px;
         height: 187.49px;
@@ -49,3 +50,13 @@ body{
     border: 1px solid;
  display: block;
 } */
+@media screen and (max-width: 400px) {
+.video-grid {
+        display: grid;
+        grid-template-columns: auto ;
+    }
+.video-grid-container {
+
+    margin-top: 70px;
+}
+}

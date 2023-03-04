@@ -14,13 +14,13 @@ const Home = () => {
 return (<>
    <div>
       <Navbar/>
-      <Sidebars />
       <div className='video-grid-container'>
          <ButtonBar/>
             <div className='video-grid'>
                {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
             </div>
       </div>
+      <Sidebars />
   </div>      
 </>)
 }

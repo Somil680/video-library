@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useCallback } from 'react';
 import { usePlaylist } from '../../context';
 import "./Playlistmodal.css"
 function PlaylistModal( videos ) {
@@ -6,27 +6,32 @@ function PlaylistModal( videos ) {
  
     const { playlistDispatch } = usePlaylist()
     const [newPlaylist, setNewPlaylist] = useState([])
-    const [name, setName] = useState("")
-    const [isChecked, setIsChecked] = useState(true)
+    const [name, setName] = useState('')
+    const [isChecked, setIsChecked] = useState([])
      
 const addnameofplaylist = (e) => {
-      setName(e.target.value)
+    setName(e.target.value)
     };
+    
+// console.log(name)
+
 const addplaylist = ()=>{
-    const names = [...newPlaylist, name];
-    setNewPlaylist(names);
-    console.log("playlist",newPlaylist)
-    }
-
-function AdditeminPlaylist() {
-        // console.log("click", item)
-        setIsChecked(!isChecked);
-        console.log(isChecked)
-    }
-    // console.log(isChecked)
+    setNewPlaylist([...newPlaylist, name]);
+    setIsChecked([...isChecked, false])
+    setName('')
+} 
+console.log("playlist",newPlaylist)
 
 
-
+    const AdditeminPlaylist  = useCallback((index) => {
+        setIsChecked((prevState) => {
+            const newCheckedItems = [...prevState];
+            newCheckedItems[index] = !newCheckedItems[index]; // toggle the checked state of the item at the specified index
+            return newCheckedItems;
+        });
+    }, [setIsChecked]);
+    console.log(isChecked)
+    
 
 
 return (<>
@@ -36,12 +41,11 @@ return (<>
             <input type="text" onChange={addnameofplaylist}/>
             <button onClick={addplaylist}>Add</button>
 
-{newPlaylist.map((item , index , videos) => (
-    <div key={index}  >
-
-         {/* <input type="checkbox" name="" id="check" value={item}/> */}
-        <p onClick={AdditeminPlaylist} >{item}</p>
-        </div>
+{newPlaylist.map((item,index) => (
+    <div key={index}  onClick={()=>AdditeminPlaylist(index)} checked={isChecked[index]} >
+        <input type="checkbox" name="" value={item} id={`check-${index}`}  />
+        <label htmlFor={`check-${index}`}>{item},{index}</label>
+    </div>
                
   
 ))}
