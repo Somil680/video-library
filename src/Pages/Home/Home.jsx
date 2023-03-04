@@ -10,9 +10,7 @@ const Home = () => {
    const {filterState} =useFilter()
    const  videodata  = [...videoState.videos]
    const categorydata = CategoryFilter([...videodata] , filterState.Category)
-//   console.log(videodata)
-//   console.log(categorydata)
-   
+
 return (<>
    <div>
       <Navbar/>
