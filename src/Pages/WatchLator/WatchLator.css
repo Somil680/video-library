@@ -1,3 +1,4 @@
+@media screen and (min-width: 401px) {
 .textcolor{
     color: grey;
 }
@@ -55,10 +56,14 @@
         padding: 0px 0px 12px 0px;
 }
 .watchlator-videos-container {
-    margin: 0px 20px;
+    margin: 0px 20px 15px 20px;
     display: flex;
+}
+.watchlatorvideos-detail {
+display: flex;
+    width: 100%;
     justify-content: space-between;
-    padding: 0px 0px 12px 0px;
+
 }
 .watchlator-videos{
         width: 717px;
@@ -75,4 +80,105 @@ background-color: var(--btn-bg-color);
     height: fit-content;
      padding: 10px;
      border-radius: 44px;
+}
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+.textcolor {
+    color: grey;
+}
+.watchlator-container {
+    margin-top: 57px;
+    display: flex;
+    flex-direction: column;
+}
+.first-video-show {
+    background: linear-gradient(to top, #121212, #383838);
+    width: 95%;
+        height: 461px;
+        margin: 0px 11px;
+        border-radius: 20px;
+}
+.tump-image {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.first-tumbnail-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 17px 16px;
+    border-radius: 20px
+}
+
+.placeincenter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Play-btn {
+    width: 50%;
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: var(--text-color);
+    color: var(--btn-color);
+    box-shadow: 4px 4px 12px 9px #323232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.video-image-watchlator {
+    /* width: 168px; */
+    height: 94px;
+    border-radius: 10px;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 12px 0px;
+}
+
+.watchlator-videos-container {
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 12px 0px;
+    flex-direction: column;
+}
+
+/* .watchlator-videos {
+    width: 717px;
+} */
+
+.delete:hover {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    border-radius: 44px;
+    background-color: var(--btn-bg-color);
+
+}
+
+.delete {
+    height: fit-content;
+    padding: 10px;
+    border-radius: 44px;
+}
+.watchlatorvideos-detail {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+}
 }
