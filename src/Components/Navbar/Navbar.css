@@ -90,7 +90,14 @@ width: 20px;
 }
 .font-brand {
     font-family: 'Anton', sans-serif;
-        font-weight: 100;
+   
+ font-weight: 100;
+}
+.ImPlay {
+    display: flex;
+        align-items: center;
+
+        width: 40px;
 }
 }
 
@@ -98,6 +105,13 @@ width: 20px;
 .font-brand{
 font-family: 'Anton', sans-serif;
     font-weight: 100;
+}
+.ImPlay{
+    display: flex;
+        align-items: center;
+
+        width: 40px;
+
 }
 
 .Navbar-container {
@@ -122,7 +136,7 @@ font-family: 'Anton', sans-serif;
 }
                 
 .brand {
- 
+    margin-left: 13px;
     display: flex;
     align-items: center;
 }

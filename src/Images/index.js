@@ -1,4 +1,4 @@
 import Emptyimage from "./Assets/Empty.png"
 import underwork from "./Assets/underwork.png"
-
-export {Emptyimage , underwork}
+import logo from "./Assets/logo.png"
+export {Emptyimage , underwork , logo}

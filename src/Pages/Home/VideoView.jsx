@@ -26,7 +26,8 @@ return (<>
         <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image' />
         <div className='video-detail'>
         <span className='content-detail'>
-        <h4 className='margin0'>{title}</h4>
+                    <h4 className='margin0'>{title.slice(0 , 74)}</h4>
+                    <br />
         <p className='margin0'>{creator}</p>
         </span>
         <span className='DotsVertical'>
