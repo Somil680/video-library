@@ -1,3 +1,4 @@
+@media screen and (min-width: 401px) {
 .main-history-body-container{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -9,4 +10,19 @@
     width: 210px;
     height: 118px;
     border-radius: 10px;
+}
+}
+@media screen and (max-width: 400px) {
+.main-history-body-container {
+    display: grid;
+    grid-template-columns: auto;
+}
+.history-video-container {
+    width: 100%;
+}  
+.history-video-image {
+    width: 100%px;
+    height: 210px;
+    border-radius: 10px;
+}
 }
