@@ -157,9 +157,9 @@ background-color: var(--btn-bg-color);
     flex-direction: column;
 }
 
-/* .watchlator-videos {
-    width: 717px;
-} */
+.watchlator-videos {
+   margin-bottom: 50px;
+}
 
 .delete:hover {
     height: 20px;
