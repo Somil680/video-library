@@ -60,14 +60,12 @@
      flex-direction: column;
      align-items: center;
      padding: 5px;
-
  }
 
  .bars-icon-div:hover {
      padding: 5px;
      border-radius: 10px;
      background-color: var(--btn-bg-color);
-
  }
 
  .sidebars-p-tag {
