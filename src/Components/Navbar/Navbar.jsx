@@ -13,7 +13,7 @@ function Navbar() {
                 <span className='nav-bar-icon'> <FaBars /></span>
                 <span className='brand'>
                  <span className='Faplay-icon'><FaPlay /></span>
-                <h3 >Playtube</h3>
+                <h3 className='font-brand' >Streamscape</h3>
                 </span>
             </div>
 
