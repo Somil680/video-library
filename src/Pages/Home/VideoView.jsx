@@ -23,7 +23,8 @@ return (<>
         
         <Link to={`/watch=/${_id}`} className="Link" onClick={() => historyHandler()}>
             
-        <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image' />
+        {/* <img src={`https://i.ytimg.com/vi_webp/${iframeId}/hqdefault.webp `} alt="" className='video-image' /> */}
+        <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className='video-image' />
         <div className='video-detail'>
         <span className='content-detail'>
                     <h4 className='margin0'>{title.slice(0 , 74)}</h4>
