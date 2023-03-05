@@ -177,7 +177,6 @@ background-color: var(--btn-bg-color);
 }
 .watchlatorvideos-detail {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
 }

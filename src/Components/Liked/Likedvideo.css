@@ -1,4 +1,4 @@
-.main-like-body-container {
+@media screen and (min-width: 401px) {.main-like-body-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 }
@@ -11,4 +11,21 @@
     width: 210px;
     height: 118px;
     border-radius: 10px;
+}}
+@media screen and (max-width: 400px) {
+.main-like-body-container {
+        display: grid;
+        grid-template-columns: auto ;
+    }
+
+    .like-video-container {
+        width: 100%;
+    }
+
+    .like-video-image {
+        width: 100%;
+        height: 210px;
+        border-radius: 10px;
+    }
 }
+

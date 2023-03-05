@@ -9,16 +9,17 @@ function WatchlatorView({ watchVideos }) {
     const { _id, title, iframeId, publishedAt, creator } = watchVideos
     
 return (<>
-<Link key={_id} to={`/watch=/${_id}`} className="Link">
 <div key={_id} className="watchlator-videos-container">
             
             <div>
+<Link key={_id} to={`/watch=/${_id}`} className="Link">
                     <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image-recommend' />
+</Link>    
             </div>
                 
             <div className='watchlatorvideos-detail'>   
             <div className='video-detail-watchlator'>
-                    <h4 className='margin0'>{title}</h4>
+                    <h4 className='margin0'>{title.slice(0,70)}</h4>
                     <p className='margin0'>{creator}</p>
                     <p className="margin0">{publishedAt}</p>    
             </div> 
@@ -27,7 +28,6 @@ return (<>
             </div> 
             </div>    
 </div>
-</Link>    
 
     </>)
 }

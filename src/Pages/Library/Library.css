@@ -26,7 +26,7 @@ display: flex;
 
 @media screen and (max-width: 400px){
 .Library-container {
-    margin: 57px 10px 0px 10px;
+    margin: 57px 10px 50px 10px;
 }
 .hr-line {
     border: 1px solid var(--btn-bg-color);
