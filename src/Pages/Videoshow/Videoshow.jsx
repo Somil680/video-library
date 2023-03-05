@@ -26,7 +26,7 @@ function Videoshow() {
   
 return (<>
 <div>
-  {/* <Navbar /> */}
+  <Navbar/>
   <Sidebars />
     {playlistState.isModal ? <PlaylistModal videos /> : <p></p>}
     
@@ -34,7 +34,7 @@ return (<>
     <div className='Videoplay-container'> 
         {videos.map((item) =>(<VideoshowView videos={item} videoId={videoId} key={item._id} />  ))   }
     </div>
-    <div className="recommend-videos">
+    <div className="recommend-container">
         {Finalrecommendvideo.map((items) =>( <RecommendVideo videos={items} key={items._id} />))}
     </div>
 </div>

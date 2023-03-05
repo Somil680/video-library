@@ -6,8 +6,11 @@
   --btn-bg-hover : rgb(44, 43, 43);
 }
 .App {
-     
-        font-family: Roboto, Arial, sans-serif;
+   font-family:"Roboto",
+          "Arial",
+          sans-serif;
+    
+          
 }
 /* 
 .App-logo {

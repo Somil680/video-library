@@ -89,7 +89,8 @@ return (<>
         </div>
     </div>
         <div className='video-discription'>
-            <p className='margin0 Font'>{publishedAt} </p>
+                <p className='margin0 Font'>{publishedAt} </p>
+                <br />
             <p className='margin0 Font'>{isExpanded ? description : description.slice(0 , 150)+"..."}</p>
             <h4 className='margin0 Showmore-btn btn-hover' onClick={toggleExpanded}>{isExpanded ? "Show Less" : "Show More"}</h4>
 </div>
