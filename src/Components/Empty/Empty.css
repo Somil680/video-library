@@ -1,3 +1,4 @@
+@media screen and (min-width: 401px) {
 .empty-image{
         display: flex;
         flex-direction: column;
@@ -9,4 +10,19 @@
 }
 .img-empty{
     width: 40%;
+}}
+@media screen and (max-width: 400px) {
+.empty-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 60px;
+        width: 100%;
+        align-items: center;
+
+    }
+
+    .img-empty {
+        width: 80%;
+    }
 }

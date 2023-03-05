@@ -26,7 +26,7 @@ return(<>
     <div className='watchlator-container'>
 
         <div className='first-video-show'  >
-            {FirstVideo.map((item) => (<WatchlatorFirst Firstvideo={item}  Noofvideos={watchlatorItem } />))}
+            {FirstVideo.map((item) => (<WatchlatorFirst Firstvideo={item} key={item._id}  Noofvideos={watchlatorItem } />))}
         </div>
         <div  className='watchlator-videos'>
              {watchlatorItem.map((item) => (<WatchlatorView watchVideos={item} key={item._id} />))}

@@ -11,17 +11,17 @@ function WatchlatorView({ watchVideos }) {
 return (<>
 <div key={_id} className="watchlator-videos-container">
             
-            <div>
+            <div className='video-image-watch'>
 <Link key={_id} to={`/watch=/${_id}`} className="Link">
-                    <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image-recommend' />
+                    <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image-watch' />
 </Link>    
             </div>
                 
             <div className='watchlatorvideos-detail'>   
             <div className='video-detail-watchlator'>
-                    <h4 className='margin0'>{title.slice(0,70)}</h4>
-                    <p className='margin0'>{creator}</p>
-                    <p className="margin0">{publishedAt}</p>    
+                    <h5 className='margin0'>{title.slice(0,30)}</h5>
+                    <p className='margin0 font-watch'>{creator}</p>
+                    <p className="margin0 font-watch">{publishedAt}</p>    
             </div> 
             <div className='delete'
                     onClick={()=> watchDispatch({type: "REMOVE-TO-WATCH-LATOR" ,payload: _id})}> <MdDelete className='bars-icon  '/>
