@@ -4,10 +4,8 @@
     --btn-color : rgb(34 ,34 ,34) ;
     --btn-bg-color : rgb(63,63,63);
 }
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&family=Marck+Script&family=Pacifico&display=swap');
 @media screen and (min-width: 401px){
-
 
 .Navbar-container{
     display: flex;
@@ -53,7 +51,7 @@
         margin-left: 1px;
 }
 .mic-icon{
-width: 20px;
+    width: 20px;
     height: 20px;
     border-radius: 50px;
     background-color: var(--btn-color);
@@ -91,26 +89,24 @@ width: 20px;
 }
 .font-brand {
     font-family: 'Marck Script', cursive;
- font-weight:900;
+    font-weight:900;
 }
 .ImPlay {
     display: flex;
-        align-items: center;
-
-        width: 40px;
+    align-items: center;
+    width: 40px;
 }
 }
 
 @media screen and (max-width: 400px){
 .font-brand{
     font-family: 'Marck Script', cursive;
-        font-weight: 900;
+    font-weight: 900;
 }
 .ImPlay{
     display: flex;
-        align-items: center;
-
-        width: 40px;
+    align-items: center;
+    width: 40px;
 
 }
 
@@ -121,8 +117,8 @@ width: 20px;
     color: var(--text-color);
     background-color: var(--nav-color);
     position: fixed;
-     z-index: 1;
-     width: 100%;
+    z-index: 1;
+    width: 100%;
     top: 0px;
 }
 .fieldset-in-search {
