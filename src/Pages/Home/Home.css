@@ -47,12 +47,20 @@ body{
     border: 1px solid;
  display: block;
 } */
+.home-font{
+        margin-top: 10px;
+            color: rgb(116 116 116);
+}
 }
 
 @media screen and (max-width: 400px) {
 .video-grid {
     display: grid;
     grid-template-columns: auto ;
+}
+.home-font {
+    margin-top: 10px;
+    color: rgb(116 116 116);
 }
 .video-grid-container {
     margin-top: 70px;

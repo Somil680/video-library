@@ -2,49 +2,62 @@
 .radio-button {
     display: none;
 }
-
-label {
+.label {
 display: inline-block;
     background-color: var(--btn-bg-color);
     color: var(--text-color);
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 23px;
+    padding: 6px 12px;
+    font-size: 11px;
+    border: 1px solid #5d5b5b;
+    min-width: -moz-fit-content;
     min-width: fit-content;
-    margin: 8px 9px;
+    margin: 5px 4px;
     cursor: pointer;
     text-align: center
 }
 .Button-container{
-    /* border: 1px solid; */
-        display: flex;
-        
-        align-items: center;
-        margin: 0px 5px;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+    background-color: var(--nav-color)
+}
+.Button-container::-webkit-scrollbar {
+    width: 0.2em;
+}
+.Button-container::-webkit-scrollbar-thumb {
+    background-color: var(--nav-color);
 }
 }
 @media screen and (max-width: 400px) {
 .radio-button {
     display: none;
 }
-
-label {
-display: inline-block;
+.label {
+    display: inline-block;
     background-color: var(--btn-bg-color);
     color: var(--text-color);
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    min-width: fit-content;
-    margin: 8px 9px;
+     border-radius: 50px;
+    padding: 7px 12px;
+    font-size: 11px;
+    border: 1px solid #5d5b5b;
+    margin: 5px 6px;
     cursor: pointer;
-    text-align: center
+   text-align: center;
 }
 .Button-container{
-    /* border: 1px solid; */
-        display: flex;
-        overflow-x: scroll;
-        align-items: center;
-        margin: 0px 5px;
+
+    display: flex;
+     overflow-x: scroll;
+    align-items: center;
+    margin: 0px 5px;
+}
+.Button-container::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+.Button-container::-webkit-scrollbar-thumb {
+    background-color: var(--nav-color);
 }
 }

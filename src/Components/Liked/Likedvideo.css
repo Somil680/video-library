@@ -6,6 +6,11 @@
 .like-video-container {
     width: 210px;
 }
+.like-font {
+    font-size: 13px;
+    margin-top: 6px;
+    color: #868686;
+}
 
 .like-video-image {
     width: 210px;

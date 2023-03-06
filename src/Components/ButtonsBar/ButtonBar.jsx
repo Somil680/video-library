@@ -6,8 +6,10 @@ const ButtonBar = () => {
 return (<>
     <div className='Button-container'>
         <label className='label' onClick={()=> filterDispatch({type : "CATEGORY" , payload : "All"})}>
-            <input type="radio" name="myRadio" className="radio-button" />Explore
-            
+            <input type="radio" name="myRadio" className="radio-button" />Explore  
+        </label>
+         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Spirituality" })}>
+            <input type="radio" name="myRadio" className="radio-button"/>Ranveer Allahbadia
         </label>
         <label className='label'  onClick={() => filterDispatch({ type: "CATEGORY", payload: "Coding" })}>
             <input type="radio" name="myRadio" className="radio-button" />Coding
@@ -18,6 +20,9 @@ return (<>
         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Finanace" })}>
             <input type="radio" name="myRadio" className="radio-button"/>Finanace
         </label>
+         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Mystery" })}>
+            <input type="radio" name="myRadio" className="radio-button"/>Dhruv Rathee
+        </label>
         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "StockMarket" })}>
             <input type="radio" name="myRadio" className="radio-button"/>Stock Market
         </label>
@@ -27,14 +32,21 @@ return (<>
         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Bollywood" })}>
             <input type="radio" name="myRadio" className="radio-button"/>Bollywood
         </label>
+          <label className='label'  onClick={() => filterDispatch({ type: "CATEGORY", payload: "Coding" })}>
+            <input type="radio" name="myRadio" className="radio-button" />Apna Collage
+        </label>
         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Spirituality" })}>
             <input type="radio" name="myRadio" className="radio-button"/>Spirituality
         </label>
         <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Mystery" })}>
             <input type="radio" name="myRadio" className="radio-button"/>Mystery
         </label>
-
-          
+        <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "StockMarket" })}>
+            <input type="radio" name="myRadio" className="radio-button"/>Sandeep Maheshwari
+        </label>
+        <label className='label' onClick={() => filterDispatch({ type: "CATEGORY", payload: "Talks" })}>
+            <input type="radio" name="myRadio" className="radio-button"/>Famous CEOs
+        </label>
     </div>
         
     </>)
