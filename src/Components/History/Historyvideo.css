@@ -20,8 +20,7 @@
 @media screen and (max-width: 400px) {
 
 .history-video-container {
-    /* width: 200px; */
-    /* border: 1px solid; */
+width: 125px;
         margin: 0px 5px;
 }  
 .history-video-image {
@@ -29,7 +28,9 @@
     border-radius: 10px;
 }
 .history-font{
-    font-size: 10px;
+font-size: 13px;
+    margin-top: 6px;
+    color: #868686;
 }
 .history-video-detail{
         display: flex;

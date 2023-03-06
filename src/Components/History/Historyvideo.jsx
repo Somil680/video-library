@@ -18,7 +18,7 @@ return (<>
         <div className='history-video-detail'>
         <span className='content-detail'>
             <h5 className='margin0'>{item.title.slice(0, 29)}</h5>
-            <br />
+        
             <p className='margin0 history-font' >{item.creator}</p>
         </span>
         <span className='DotsVertical'>
