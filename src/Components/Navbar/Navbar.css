@@ -5,6 +5,7 @@
     --btn-bg-color : rgb(63,63,63);
 }
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&family=Marck+Script&family=Pacifico&display=swap');
 @media screen and (min-width: 401px){
 
 
@@ -89,9 +90,8 @@ width: 20px;
     margin-right: 20px ;
 }
 .font-brand {
-    font-family: 'Anton', sans-serif;
-   
- font-weight: 100;
+    font-family: 'Marck Script', cursive;
+ font-weight:900;
 }
 .ImPlay {
     display: flex;
@@ -103,8 +103,8 @@ width: 20px;
 
 @media screen and (max-width: 400px){
 .font-brand{
-font-family: 'Anton', sans-serif;
-    font-weight: 100;
+    font-family: 'Marck Script', cursive;
+        font-weight: 900;
 }
 .ImPlay{
     display: flex;
