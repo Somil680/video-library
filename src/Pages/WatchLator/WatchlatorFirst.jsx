@@ -11,7 +11,7 @@ return (<>
     <div className='first-tumbnail-show'>
         <div className='placeincenter'>
             
-        <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='tump-image' />
+        <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className='tump-image' />
       </div>
 
         

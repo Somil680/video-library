@@ -7,10 +7,16 @@ function History() {
 
     const { historyState } = useHistory()
     const {historyItem} = historyState
-    console.log(historyItem)
+    // console.log(historyItem)
+    
+let ActualhistoryItem = historyItem.map((_, index, originalArray) => {
+  return originalArray[originalArray.length - 1 - index];
+});
+// console.log(ActualhistoryItem);
+
 return (<>
 <div className="main-history-body-container">
-    {historyItem.map((item) => (
+    {ActualhistoryItem.map((item) => (
     <div key={item._id} className="history-video-container">
         <Link to={`/watch=/${item._id }`} className="Link">
                 <img src={`https://img.youtube.com/vi/${item.iframeId}/maxresdefault.jpg `} alt="" className='history-video-image' />

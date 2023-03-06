@@ -13,7 +13,7 @@ return (<>
             
             <div className='video-image-watch'>
 <Link key={_id} to={`/watch=/${_id}`} className="Link">
-                    <img src={`https://i.ytimg.com/vi_webp/${iframeId}/mqdefault.webp `} alt="" className='video-image-watch' />
+                    <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className='video-image-watch' />
 </Link>    
             </div>
                 
