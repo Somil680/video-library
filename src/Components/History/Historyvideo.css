@@ -25,7 +25,7 @@
         margin: 0px 5px;
 }  
 .history-video-image {
-    width: 140px;
+    width: 125px;
     border-radius: 10px;
 }
 .history-font{
@@ -46,6 +46,6 @@
 }
 
 .main-history-body-container::-webkit-scrollbar-thumb {
-    background-color: #000000;
+    background-color: var(--nav-color);
 }
 }
