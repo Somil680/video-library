@@ -11,17 +11,18 @@ return (<>
     {likeItem.map((item) => (
     <div key={item._id} className="like-video-container">
         <Link to={`/watch=/${item._id }`} className="Link">
-        <img src={`https://i.ytimg.com/vi_webp/${item.iframeId}/mqdefault.webp `} alt="" className='like-video-image'/>
-        <div className='video-detail'>
+                <img src={`https://img.youtube.com/vi/${item.iframeId}/maxresdefault.jpg `} alt="" className='like-video-image' />
+                </Link>
+        <div className='like-video-detail'>
         <span className='content-detail'>
-            <h4 className='margin0'>{item.title.slice(0,35)+"..."}</h4>
-            <p className='margin0'>{item.creator}</p>
+            <h5 className='margin0'>{item.title.slice(0,29)}</h5>
+            <p className='margin0 like-font'>{item.creator}</p>
         </span>
         <span className='DotsVertical'>
             <HiDotsVertical className='bars-icon  '/>
         </span> 
         </div> 
-        </Link>
+        
     </div>
 ))}  
 </div>    

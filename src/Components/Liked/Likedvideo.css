@@ -14,17 +14,35 @@
 }}
 @media screen and (max-width: 400px) {
 .main-like-body-container {
-        display: grid;
-        grid-template-columns: auto ;
+    display: flex;
+        overflow-x: scroll;
+    
+    }
+    
+    .main-like-body-container::-webkit-scrollbar {
+        width: 0.2em;
+    }
+    
+    .main-like-body-container::-webkit-scrollbar-thumb {
+        background-color: var(--nav-color);
     }
 
     .like-video-container {
-        width: 100%;
+    width: 125px;
+        margin: 0px 5px;
     }
-
+.like-video-detail {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.like-font {
+    font-size: 13px;
+    margin-top: 6px;
+    color: #868686;
+}
     .like-video-image {
-        width: 100%;
-        height: 210px;
+    width: 125px;
         border-radius: 10px;
     }
 }
