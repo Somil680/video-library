@@ -22,7 +22,7 @@ root.render(
         <FilterProvider>
             <VedioProvider>
                 <App />
-            </VedioProvider>,
+            </VedioProvider>
         </FilterProvider>
             </WatchlatorProvider>
                 </HistoryProvider>

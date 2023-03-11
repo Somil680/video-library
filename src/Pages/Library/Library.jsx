@@ -7,9 +7,9 @@ import {AiOutlineHistory , AiOutlineLike} from "react-icons/ai"
 
 function Library() {
     const { historyState } = useHistory()
-    const {historyItem} = historyState
+    const { historyItem } = historyState
     const { likeState } = useLike()
-    const {likeItem} = likeState
+    const { likeItem } = likeState
 return (<>
 <Navbar />
 <Sidebars />

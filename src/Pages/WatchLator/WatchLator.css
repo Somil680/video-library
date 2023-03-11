@@ -46,7 +46,7 @@
 }
 
 
-.video-image-watchlator {
+.video-image-watch {
     /* width: 168px; */
     height: 94px;
     border-radius: 10px;
@@ -80,6 +80,12 @@ background-color: var(--btn-bg-color);
     height: fit-content;
      padding: 10px;
      border-radius: 44px;
+}
+.title1{
+    display: block;
+}
+.title2{
+    display: none;
 }
 
 }
@@ -192,4 +198,11 @@ margin: 0px 10px;
 /* .video-detail-watchlator{
 
 } */
+.title1 {
+    display: none;
+}
+
+.title2 {
+    display: block;
+}
 }

@@ -14,13 +14,12 @@ function Videoshow() {
     const { videoState } = useVideos()
     const videoShow = videoState.videos
     const videos = [videoShow.find((element) => element._id === videoId)];
-    console.log(videos, "vif")
-    
+
     const videotag = videos.map((videostged) => videostged.tag)
     const tag = videotag.join()
     const tagVideos = videoShow.filter((element) => element.tag === tag);
     const Finalrecommendvideo = tagVideos.filter((ele) => ele._id !== videoId)
-
+    const {PlaylistItem} = playlistState
 
   
   
@@ -28,7 +27,7 @@ return (<>
 <div>
   <Navbar/>
   <Sidebars />
-    {playlistState.isModal ? <PlaylistModal videos /> : <p></p>}
+      
     
 <div className='videoshowview-container'> 
     <div className='Videoplay-container'> 

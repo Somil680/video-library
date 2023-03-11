@@ -91,6 +91,7 @@
     font-family: 'Marck Script', cursive;
     font-weight:900;
     font-size: 31px;
+    margin: 0px;
 }
 .ImPlay {
     display: flex;

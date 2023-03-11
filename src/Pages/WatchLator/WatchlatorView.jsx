@@ -19,7 +19,8 @@ return (<>
                 
             <div className='watchlatorvideos-detail'>   
             <div className='video-detail-watchlator'>
-                    <h5 className='margin0'>{title.slice(0,30)}</h5>
+                    <h5 className='margin0 title1'>{title}</h5>
+                    <h5 className='margin0 title2'>{title.slice(0,30)}</h5>
                     <p className='margin0 font-watch'>{creator}</p>
                     <p className="margin0 font-watch">{publishedAt}</p>    
             </div> 

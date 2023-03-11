@@ -5,13 +5,10 @@ import { AiOutlineLike,AiFillLike ,AiOutlineDislike ,AiFillDislike } from "react
 import { MdOutlineWatchLater , MdPlaylistAdd ,MdDone } from 'react-icons/md'
 import { useLike, usePlaylist, useWatchLator } from '../../context';
 import { findInArray } from '../../Utilis/find';
+import { PlaylistModal } from '../../Components/index';
 
 function VideoshowView({ videos, videoId }) {
 
-
-    
-// const [isClicked, setIsClicked] = useState(false)
-// function dislikeHandler(){setIsClicked(!isClicked)}
 const [isExpanded, setIsExpanded] = useState(false)
 function toggleExpanded(){setIsExpanded(!isExpanded)}
     
@@ -51,9 +48,15 @@ const isInLike = findInArray(_id , likeItem)
     }
     }
 
-    
-const {  playlistDispatch } = usePlaylist()
-return (<>
+    const { playlistState,playlistDispatch } = usePlaylist()
+    // console.log(playlistState.Playlistitem)
+    const playlistHandler = () => {
+        playlistDispatch({
+            type: "OPEN-MODAL",
+        })
+    }
+    return (<>
+      {playlistState.isModal ? <PlaylistModal Newvideo={videos} /> : <p></p>}
 <div key={videoId}>
     <div >
     <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} className="video_player"
@@ -84,7 +87,7 @@ return (<>
         <div className='onclick-btn-continer-main'>
             <span className='onclick-btn-container btn-hover' onClick={() => watchHandler(videos , _id )}>
             {isInWatchlator ?<MdDone className='bars-icon'/>:<MdOutlineWatchLater className='bars-icon'/>}  </span>
-            <span className='onclick-btn-container btn-hover' onClick={()=>playlistDispatch({type: "OPEN-MODAL" })}><MdPlaylistAdd  className='bars-icon'/></span>
+            <span className='onclick-btn-container btn-hover' onClick={()=>playlistHandler()}><MdPlaylistAdd  className='bars-icon'/></span>
         </div>
         </div>
     </div>

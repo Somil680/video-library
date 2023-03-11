@@ -1,6 +1,6 @@
 export { videoReducer   } from "./videoReducer"
 export { filterReducder } from "./filterReducer"
 export { watchReducer   } from "./watchReducer"
-export { playlistReducer } from "./playlistReducer"
+export { playlistReducer , initialPlaylist } from "./playlistReducer"
 export { historyReducer } from "./historyReducer"
 export {LikeReducer} from "./LikeReducer"
