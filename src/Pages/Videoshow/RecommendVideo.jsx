@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Videoshow.css"
+import "./Videoshow.scss"
 import { findInArray } from '../../Utilis/find';
 import { useHistory } from '../../context';
 import { HiDotsVertical } from "react-icons/hi";

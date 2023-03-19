@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "./Videoshow.css"
+import "./Videoshow.scss"
 import ReactPlayer from 'react-player/lazy'
-import { AiOutlineLike,AiFillLike ,AiOutlineDislike ,AiFillDislike } from "react-icons/ai"
+import { AiOutlineLike,AiFillLike ,AiOutlineDislike } from "react-icons/ai"
 import { MdOutlineWatchLater , MdPlaylistAdd ,MdDone } from 'react-icons/md'
 import { useLike, usePlaylist, useWatchLator } from '../../context';
 import { findInArray } from '../../Utilis/find';
@@ -11,12 +11,14 @@ function VideoshowView({ videos, videoId }) {
 
 const [isExpanded, setIsExpanded] = useState(false)
 function toggleExpanded(){setIsExpanded(!isExpanded)}
-    
-const { _id, iframeId, title, description, creator, publishedAt } = videos
-    
+const { _id, iframeId, title, description, creator, publishedAt } = videos 
 const { watchState, watchDispatch } = useWatchLator()
 const {watchlatorItem} = watchState
-const isInWatchlator = findInArray(_id ,watchlatorItem)
+const isInWatchlator = findInArray(_id, watchlatorItem)
+const { playlistState,playlistDispatch } = usePlaylist()
+const { likeState, likeDispatch } = useLike()
+const { likeItem } = likeState
+    
 const watchHandler = ( videos , _id) => {
     if (isInWatchlator) {
         watchDispatch({
@@ -28,9 +30,6 @@ const watchHandler = ( videos , _id) => {
         })
     }
 } 
-
-const { likeState, likeDispatch } = useLike()
-const { likeItem } = likeState
 
 const isInLike = findInArray(_id , likeItem)
     const likeHandler = (videos , _id) => {
@@ -46,17 +45,25 @@ const isInLike = findInArray(_id , likeItem)
             payload : videos
         })
     }
+}
+
+const playlistHandler = () => {
+    playlistDispatch({
+        type: "OPEN-MODAL",
+    })
     }
 
-    const { playlistState,playlistDispatch } = usePlaylist()
-    // console.log(playlistState.Playlistitem)
-    const playlistHandler = () => {
-        playlistDispatch({
-            type: "OPEN-MODAL",
-        })
-    }
-    return (<>
-      {playlistState.isModal ? <PlaylistModal Newvideo={videos} /> : <p></p>}
+    const getModal = () => (
+      playlistState.isModal ? <PlaylistModal Newvideo={videos} /> : <p></p>
+    )
+    
+    
+
+
+
+return (<>
+    {getModal()}
+    
 <div key={videoId}>
     <div >
     <ReactPlayer url={`https://www.youtube.com/embed/${iframeId}`} controls={true} playing={true} className="video_player"
@@ -79,8 +86,6 @@ const isInLike = findInArray(_id , likeItem)
             </span>
             <div className="vertical-line"></div>
                     <span className='like-btn btn-hover'><AiOutlineDislike className='bars-icon' />
-                        {/* onClick={dislikeHandler()}> */}
-            {/* {isClicked ?<AiOutlineDislike className='bars-icon' /> : <AiFillDislike className='bars-icon' />} */}
             </span>
         </div>
         
