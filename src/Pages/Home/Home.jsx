@@ -26,7 +26,6 @@ const Home = () => {
    )
    const getContent = () => (
       <div className={style.content}>
-      {/* // <div className='bfy__home__content'> */}
          {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
       </div>
    )
