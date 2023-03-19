@@ -1,0 +1,118 @@
+@media screen and (min-width: 401px) {
+.bfy__playlist__header{
+    margin-top:80px  ;
+    margin-left:120px  ;
+    display: flex;
+    justify-content: space-between;
+}
+.bfy__playlist__content{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+.bfy__playlist__sub_content{
+    border-radius: 10px;
+    width: 270px;
+    height: 300px;
+    background: linear-gradient(to top, #121212, #383838);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bfy__playlist__tumbnail{
+    width: 250px;
+    margin-top: 10px;
+    border-radius: 15px
+}
+.bfy__playlist__button{
+    padding: 10px;
+    width: 43%;
+    border-radius: 20px;
+}
+.bfy__playlist__details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+.bfy__playlist__font{
+    color: gray;
+    font-size: 14px;
+}
+.bfy__playlist__plyItem__contnet{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+           
+}
+.bfy__playlist__plyItem__sub_content{
+    display: flex;
+    width: 400px;
+    margin-bottom: 11px;
+}
+.bfy__playlist__plyItem__details{
+    display: flex;
+    justify-content: space-between;
+}
+.bfy__playlist__plyItem__tumbnail{
+    width: 180px ;
+    border-radius: 10px;
+}
+}
+@media screen and (max-width: 400px) {
+.bfy__playlist__header{
+    margin-top:80px  ;
+
+}
+.bfy__playlist__sub_content{
+border-radius: 10px;
+    width: 340px;
+    height: 158px;
+    background: linear-gradient(to top, #121212, #383838);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.bfy__playlist__content{
+    display: grid;
+    grid-template-columns: auto;
+   
+}
+/* .bfy__playlist__plyItem__contnet{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;        
+} */
+.bfy__playlist__plyItem__sub_content{
+display: flex;
+width: 100%;
+    margin-bottom: 11px;
+}
+.bfy__playlist__tumbnail{
+    display: none;
+}
+.bfy__playlist__plyItem__details{
+    display: flex;
+    justify-content: space-between;
+}
+.bfy__playlist__button{
+    padding: 10px;
+    width: 43%;
+    border-radius: 20px;
+}
+.bfy__playlist__details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+.bfy__playlist__font{
+    color: gray;
+    font-size: 14px;
+}
+.bfy__playlist__plyItem__tumbnail{
+    width: 160px ;
+    border-radius: 10px;
+}
+}

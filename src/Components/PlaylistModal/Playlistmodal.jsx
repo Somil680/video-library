@@ -40,12 +40,12 @@ return (<>
      <div className='input-container'>       
     <h2>Save to ...</h2>
     <input type="text" className='input-field' placeholder='Create a new playlist' onChange={(e) => addNameInPlaylist(e)} />
-        <button className='inpur-btn' onClick={() => addInPlaylist()}>Create</button>
+        <button className='inpur-btn' onClick={() => addInPlaylist()}>Create+ </button>
         </div>
 {Playlistitem.map(( item , index) => (
         <div key={item.ID} className="Input-check-box">
             <label htmlFor={`"check"${item.ID}` }   onClick={()=>addMoreInPlaylist(index , item)} >
-                <input type="checkbox" name="" id={`"check"${item.ID}`} />
+                <input type="checkbox" className='input'  name="" id={`"check"${item.ID}`} />
                 {item.name}
             </label>
        </div>

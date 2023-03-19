@@ -2,7 +2,7 @@ import React from 'react';
 import "./Navbar.css"
 import {BsSearch ,BsMicFill } from "react-icons/bs";
 import {IoIosNotificationsOutline} from "react-icons/io";
-import {CgProfile} from "react-icons/cg";
+import {RiAccountCircleFill} from "react-icons/ri";
 import { FaBars, FaPlay } from "react-icons/fa";
 import { ImPlay } from "react-icons/im";
 import { logo } from '../../Images';
@@ -31,7 +31,7 @@ function Navbar() {
 
             <div className='right-side-icon'>
                <span className='icon'> <IoIosNotificationsOutline /></span>
-               <span className='icon'><CgProfile/></span>
+               <span className='icon'><RiAccountCircleFill/></span>
 
             </div>
         </nav>

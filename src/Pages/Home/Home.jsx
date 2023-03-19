@@ -1,27 +1,41 @@
 import React from 'react';
-import "./Home.css"
+import "./Home.scss"
 import { ButtonBar, Navbar, Sidebars } from "../../Components/index";
-import { useVideos } from "../../context/videoContext";
-import { VideoView } from './VideoView';
+import { useVideos , useFilter  } from "../../context/index";
 import { CategoryFilter } from '../../Utilis/CategoyFilter';
-import { useFilter } from '../../context';
+import { VideoView } from './VideoView';
+
 const Home = () => {
    const { videoState } = useVideos()
-   const {filterState} =useFilter()
+   const { filterState } =useFilter()
    const  videodata  = [...videoState.videos]
    const categorydata = CategoryFilter([...videodata] , filterState.Category)
+   
+   const style = {
+      content: "bfy__home__content",
+   }
+   
+   const getNavbar = () => (
+     <Navbar/>
+   )
+   const getButtonBar = () => (
+      <ButtonBar/>
+   )
+   const getSidebars = () => (
+       <Sidebars />
+   )
+   const getContent = () => (
+      <div className={style.content}>
+      {/* // <div className='bfy__home__content'> */}
+         {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
+      </div>
+   )
 
 return (<>
-   <div>
-      <Navbar/>
-      <div className='video-grid-container'>
-         <ButtonBar/>
-            <div className='video-grid'>
-               {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
-            </div>
-      </div>
-      <Sidebars />
-  </div>      
+      {getNavbar()}
+      {getButtonBar()}
+      {getSidebars()}
+      {getContent()}
 </>)
 }
 export {Home}

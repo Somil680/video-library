@@ -4,34 +4,40 @@ body{
     
 }
 @media screen and (min-width: 401px) {
-.video-grid-container{
-    margin-left: 90px;
-    margin-top: 70px;
-}
-.video-grid{
+// Home.jsx
+.bfy__home__content {
     display: grid;
     grid-template-columns: auto auto auto;
+    margin-left: 90px;
+    margin-top: 0px;
 }
-.main-video-container{
+
+
+// VideoView.jsx
+
+
+.bfy__home__cardView__container{
     width: 335px;
     margin: 10px 10px 20px 10px;
         
-    }
-.video-image{
+}
+
+.bfy__home__cardView__tumbnail{
     width: 332.99px;
         height: 187.49px;
     border-radius: 10px;
 
 }
-.video-detail{
+.bfy__home__cardView__content__fullContent{
     display: flex;
     justify-content: space-between;
 }
-.content-detail{
+.bfy__home__cardView__content__subContent{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 .margin0{
     margin: 0px;
    
@@ -54,7 +60,7 @@ body{
 }
 
 @media screen and (max-width: 400px) {
-.video-grid {
+.bfy__home__content  {
     display: grid;
     grid-template-columns: auto ;
 }
@@ -62,25 +68,23 @@ body{
     margin-top: 10px;
     color: rgb(116 116 116);
 }
-.video-grid-container {
-    margin-top: 70px;
-}
-.main-video-container{
+
+.bfy__home__cardView__container{
 width: 100%;
 margin: 10px 0px 20px 0px;
-
 }
-.video-image {
+
+.bfy__home__cardView__tumbnail {
     width: 100%;
     height: 210.49px;
-    /* box-shadow: 0px 1px 24px 0px var(--btn-bg-color) */
+
 }
-.video-detail {
+.bfy__home__cardView__content__fullContent {
     display: flex;
     justify-content: space-between;
         margin: 0px 10px;
 }
-.content-detail {
+.bfy__home__cardView__content__subContent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
