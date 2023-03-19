@@ -18,7 +18,7 @@ const Home = () => {
    const getNavbar = () => (
      <Navbar/>
    )
-   const getButtonBar = () => (
+   const getChips = () => (
       <ButtonBar/>
    )
    const getSidebars = () => (
@@ -33,7 +33,7 @@ const Home = () => {
 
 return (<>
       {getNavbar()}
-      {getButtonBar()}
+      {getChips()}
       {getSidebars()}
       {getContent()}
 </>)
