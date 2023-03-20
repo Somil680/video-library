@@ -1,0 +1,39 @@
+@media screen and (min-width: 401px) {
+.bfy__playlist{
+    &__plyItem{
+        &-discription {
+            display: flex;
+            width: 400px;
+            margin-bottom: 11px;
+        }
+        &-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-tumbnail {
+            width: 180px;
+            border-radius: 10px;
+        }
+    }
+}
+}
+
+@media screen and (max-width: 400px) {
+.bfy__playlist {
+    &__plyItem {
+        &-discription {
+            display: flex;
+            width: 100%;
+            margin-bottom: 11px;
+        }
+        &-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-tumbnail {
+            width: 160px;
+            border-radius: 10px;
+        }
+    }
+}
+}

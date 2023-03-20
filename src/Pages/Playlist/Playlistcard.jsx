@@ -1,29 +1,29 @@
 import React from 'react';
-import "./Playlist.scss"
+import "./Playlist-card.scss"
 import { MdDelete } from "react-icons/md";
 import { usePlaylist } from "../../context";
 import { Link } from "react-router-dom";
-function Playlistname({playitem}) {
+function Playlistcard({playitem}) {
     const { playlistDispatch } = usePlaylist()
     const { _id, title, iframeId, publishedAt, creator } = playitem
 
     const styles = {
-        playlist_Item: {
-            sub_contnet: "bfy__playlist__plyItem__sub_content",
-            details: "bfy__playlist__plyItem__details",
-            tumbnail : "bfy__playlist__plyItem__tumbnail"
+        playItem: {
+            discription: "bfy__playlist__playItem-discription",
+            details: "bfy__playlist__playItem-details",
+            thumbnail : "bfy__playlist__playItem-thumbnail"
         }
     }
     
     const getPlaylistCardView = () => (
-        <div className={styles.playlist_Item.sub_contnet} >
+        <div className={styles.playItem.discription} >
             <div>
                 <Link key={_id} to={`/watch=/${_id}`} className="Link">
-                    <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className={styles.playlist_Item.tumbnail} />
+                    <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className={styles.playItem.thumbnail} />
                 </Link>
             </div>
             <div>
-                <div className={styles.playlist_Item.details}>   
+                <div className={styles.playItem.details}>   
                     <div>
                         <h5 className='margin0'>{title.slice(0 , 30)}</h5>
                         <p className='margin0 font-playlist'>{creator}</p>
@@ -40,4 +40,4 @@ return (<>
      {getPlaylistCardView()}
 </>)
 }
-export {Playlistname}
+export {Playlistcard}

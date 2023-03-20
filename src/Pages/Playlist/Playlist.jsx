@@ -1,7 +1,7 @@
 import "./Playlist.scss"
 import { usePlaylist } from "../../context"
 import { Navbar, Sidebars } from "../../Components"
-import { Playlistname } from "./Playlistname"
+import { Playlistcard } from "./Playlistcard"
 import  React , { useState } from "react"
 
 function Playlist() {
@@ -12,16 +12,16 @@ function Playlist() {
 
     const styles = {
         header: "bfy__playlist__header" ,
-        playlist_cardView: {
-            content: "bfy__playlist__content",
-            sub_Content: "bfy__playlist__sub_content",
-            tumbnail: "bfy__playlist__tumbnail",
-            details: "bfy__playlist__details",
-            font: "bfy__playlist__font",
-            button : "bfy__playlist__button"
+        playCard: {
+            content: "bfy__playlist__playCard-content",
+            description: "bfy__playlist__playCard-description",
+            thumbnail: "bfy__playlist__playCard-thumbnail",
+            details: "bfy__playlist__playCard-details",
+            font: "bfy__playlist__playCard-font",
+            button : "bfy__playlist__playCard-button"
         },
-        playlist_Item: {
-            content :  " bfy__playlist__plyItem__contnet"
+        playItem: {
+            content :  " bfy__playlist__playItem-content"
         }
     }
 
@@ -35,24 +35,30 @@ function Playlist() {
     <Sidebars />
     )
     const getPlaylist = () => (
-    <div className={styles.playlist_cardView.content}>
+    <div className={styles.playCard.content}>
     {Playlistitem.map((item) => (
-        <div key={item.ID} className={styles.playlist_cardView.sub_Content} >
+        <div key={item.ID} className={styles.playCard.description} >
             <div>
-                <img src="https://img.youtube.com/vi/AjWfY7SnMBI/maxresdefault.jpg " className={styles.playlist_cardView.tumbnail} />
+                <img src="https://img.youtube.com/vi/AjWfY7SnMBI/maxresdefault.jpg " className={styles.playCard.thumbnail} />
             </div>
-            <div className={styles.playlist_cardView.details}>
+            <div className={styles.playCard.details}>
                 <h1>{item.name}</h1>
-                <p className={styles.playlist_cardView.font} >{item.Videos.length} video</p>
+                <p className={styles.playCard.font} >{item.Videos.length} video</p>
             </div>
-            <button className={styles.playlist_cardView.button} onClick={()=>Callfunction(item)} >View All</button>
+            <button className={styles.playCard.button} onClick={()=>Callfunction(item)} >View All</button>
         </div>))}
     </div>
     )
 
+    const getPlaylistCard = (playlistCard) => (
+        <Playlistcard
+            playitem={playlistCard}
+            key={playlistCard._id}
+        />
+    )
     const getPlaylistItem = () => (
-    <div className={styles.playlist_Item.content}>        
-       {data.map((item) => (<Playlistname playitem={item} key={item._id} />))}
+    <div className={styles.playItem.content}>        
+       {data.map(getPlaylistCard)}
     </div>
     )
 

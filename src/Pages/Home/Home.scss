@@ -13,7 +13,7 @@ body{
             @media screen and (max-width: $mobil){
                     display: grid;
                     grid-template-columns: auto;
-                    margin-left: 0px;
+                    margin-left: unset;
                 
             }
         }
