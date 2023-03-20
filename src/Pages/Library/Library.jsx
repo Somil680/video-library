@@ -12,7 +12,7 @@ function Library() {
     const { likeItem } = likeState
 
     const styles = {
-        header: "bfy__library__header",
+        container: "bfy__library__container",
         content: {
            heading: "bfy__library__contnet__heading",
            text_color : "bfy__library__contnet__textcolor",
@@ -23,12 +23,7 @@ function Library() {
         }
     }
 
-    const getNavbar = () => (
-    <Navbar/>
-    ) 
-   const getSidebars = () => (
-    <Sidebars />
-    )
+  
     const getHistoryView = () => (
     <div>
         <span className={styles.content.heading} >
@@ -52,13 +47,15 @@ function Library() {
         <Liked />}
     </div>
     )
-return (<>
-    {getNavbar()}
-    {getSidebars()}
-    <div className={styles.header}>
+return (
+<div>
+ <Navbar/>
+ <Sidebars />
+    <div className={styles.container}>
         {getHistoryView()}
         {getLikedVideo()}
     </div>
-</>)
+</div>
+)
 }
 export {Library}
