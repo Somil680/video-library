@@ -20,23 +20,35 @@ function historyHandler() {
     }
 }
 
+const styles = {
+        recommend_Video: {
+        sub_content: "bfy__rec_video_sub_content",
+        tumbnail: "bfy__rec_video_tumbnail",
+        details : "bfy__rec_video_details",
+        }
+    }
 
- return (<>
-     
-<div className="recommend-videos">
+
+
+const getRecommend_cardView = () => (
     <Link key={_id} to={`/watch=/${_id}`} className="Link" onClick={()=>historyHandler()}>
-        <div key={_id} className="recommend-videos-container">
-            <div className='video--recommend'>
-                <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className='video-image-recommend' />
-                    <div className='video-detail-recommend'>
-                            <h4 className='margin10'>{title.slice(0 , 40)+"..."}</h4>
+        <div key={_id} className={styles.recommend_Video.sub_content}>
+            <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className={styles.recommend_Video.tumbnail}/>
+                <div>
+                    <h4 className='margin10'>{title.slice(0, 40) + "..."}</h4>
+                        <span className={styles.recommend_Video.details}>
                             <p className='margin10'>{creator}</p>
                             <p className="margin10">{publishedAt}</p>    
-                    </div> 
-            </div>    
+                        </span>
+                </div> 
+      
         </div>
     </Link>    
-</div>
+)
+
+ return (<>
+      {getRecommend_cardView()}
+
 </>)
 }
 export {RecommendVideo}

@@ -1,11 +1,12 @@
 import React from 'react';
-import "./Home.scss"
+
 import { HiDotsVertical } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import { useHistory } from '../../context';
 import { findInArray } from '../../Utilis/find';
 
-const VideoView = ({ videos }) => {
+import "./Video-card.scss"
+const VideoCard = ({ videos }) => {
     
     const styles = {
         cardView: {
@@ -52,4 +53,4 @@ return (<>
     {getVideoView ()}
 </>)
 }
-export {VideoView}
+export {VideoCard}
