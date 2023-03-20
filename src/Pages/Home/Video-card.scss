@@ -1,0 +1,62 @@
+$mobil : 400px ;
+
+.margin0 {
+    margin: 0px;
+
+}
+.Link {
+    text-decoration: none;
+    color: white;
+}
+.home-font {
+    margin-top: 10px;
+    color: rgb(116 116 116);
+}
+
+.bfy__home{
+    &__cardView{
+        &__container{
+            width: 335px;
+            margin: 10px 10px 20px 10px;
+
+        @media screen and (max-width : $mobil) {
+            width: 100%;
+            margin: 10px 0px 20px 0px;
+        }
+        }
+        &__tumbnail{
+            width: 332.99px;
+            height: 187.49px;
+            border-radius: 10px;
+
+        @media screen and (max-width : $mobil) {
+            width: 100%;
+            height: 210.49px;
+            border-radius: 0px;
+        }
+        }
+        &__content{
+            &__fullContent{
+                display: flex;
+                justify-content: space-between;
+
+            @media screen and (max-width : $mobil) {
+                display: flex;
+                justify-content: space-between;
+                margin: 0px 10px;
+            }
+            }
+            &__subContent{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+            @media screen and (max-width : $mobil) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            }
+        }  
+    }
+}

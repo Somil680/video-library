@@ -1,9 +1,11 @@
 import React from 'react';
-import "./Home.scss"
+
 import { ButtonBar, Navbar, Sidebars } from "../../Components/index";
 import { useVideos , useFilter  } from "../../context/index";
 import { CategoryFilter } from '../../Utilis/CategoyFilter';
-import { VideoView } from './VideoView';
+import { VideoCard } from "./VideoCard";
+
+import "./Home.scss"
 
 const Home = () => {
    const { videoState } = useVideos()
@@ -12,30 +14,29 @@ const Home = () => {
    const categorydata = CategoryFilter([...videodata] , filterState.Category)
    
    const style = {
-      content: "bfy__home__content",
+      container : "",
+      content: {
+         container: "bfy__home__content_container"
+      },
    }
-   
-   const getNavbar = () => (
-     <Navbar/>
+   const getVideoCard = (videoCard) => (
+      <VideoCard
+         videos={videoCard}
+         key={videoCard._id}
+      />
    )
-   const getButtonBar = () => (
-      <ButtonBar/>
-   )
-   const getSidebars = () => (
-       <Sidebars />
-   )
-   const getContent = () => (
-      <div className={style.content}>
-      {/* // <div className='bfy__home__content'> */}
-         {categorydata.map((items) => (<VideoView videos={items} key={items._id} /> ))}
+   const getContentView = () => (
+      <div className={style.content.container}>
+         {categorydata.map(getVideoCard)}
       </div>
    )
 
-return (<>
-      {getNavbar()}
-      {getButtonBar()}
-      {getSidebars()}
-      {getContent()}
-</>)
+return (
+   <div className={style.container}>
+      <Navbar/>
+      <ButtonBar/>
+      <Sidebars />
+      {getContentView()}
+</div>)
 }
 export {Home}
