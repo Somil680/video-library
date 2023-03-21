@@ -1,8 +1,10 @@
-import "./Playlist.scss"
+import React, { useState } from "react"
+
 import { usePlaylist } from "../../context"
 import { Navbar, Sidebars } from "../../Components"
 import { Playlistcard } from "./Playlistcard"
-import React, { useState } from "react"
+
+import "./Playlist.scss"
 
 function Playlist() {
 
@@ -32,19 +34,18 @@ function Playlist() {
     const getPlaylist = () => (
         <div className={styles.playCard.content}>
             {Playlistitem.map((item) => (
-                <div key={item.ID} className={styles.playCard.description} >
-                    <div>
-                        <img src="https://img.youtube.com/vi/AjWfY7SnMBI/maxresdefault.jpg " className={styles.playCard.thumbnail} />
-                    </div>
-                    <div className={styles.playCard.details}>
-                        <h1>{item.name}</h1>
-                        <p className={styles.playCard.font} >{item.Videos.length} video</p>
-                    </div>
-                    <button className={styles.playCard.button} onClick={() => Callfunction(item)} >View All</button>
-                </div>))}
+            <div key={item.ID} className={styles.playCard.description} >
+                <div>
+                    <img src="https://img.youtube.com/vi/AjWfY7SnMBI/maxresdefault.jpg " className={styles.playCard.thumbnail} />
+                </div>
+                <div className={styles.playCard.details}>
+                    <h1>{item.name}</h1>
+                    <p className={styles.playCard.font} >{item.Videos.length} video</p>
+                </div>
+                <button className={styles.playCard.button} onClick={() => Callfunction(item)} >View All</button>
+            </div>))}
         </div>
     )
-
     const getPlaylistCard = (playlistCard) => (
         <Playlistcard
             playitem={playlistCard}
