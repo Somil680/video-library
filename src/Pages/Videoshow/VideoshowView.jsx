@@ -14,11 +14,11 @@ function toggleExpanded(){setIsExpanded(!isExpanded)}
 const { _id, iframeId, title, description, creator, publishedAt } = videos 
 const { watchState, watchDispatch } = useWatchLator()
 const {watchlatorItem} = watchState
-const isInWatchlator = findInArray(_id, watchlatorItem)
 const { playlistState,playlistDispatch } = usePlaylist()
 const { likeState, likeDispatch } = useLike()
 const { likeItem } = likeState
-    
+
+const isInWatchlator = findInArray(_id, watchlatorItem)
 const watchHandler = ( videos , _id) => {
     if (isInWatchlator) {
         watchDispatch({
