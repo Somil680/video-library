@@ -11,7 +11,10 @@ function Playlistcard({playitem}) {
         playItem: {
             discription: "bfy__playlist__playItem-discription",
             details: "bfy__playlist__playItem-details",
-            thumbnail : "bfy__playlist__playItem-thumbnail"
+            thumbnail: "bfy__playlist__playItem-thumbnail",
+            titleText: "bfy__playlist__playItem-titleText",
+            text: "bfy__playlist__playItem-text",
+            
         }
     }
     
@@ -25,9 +28,9 @@ function Playlistcard({playitem}) {
             <div>
                 <div className={styles.playItem.details}>   
                     <div>
-                        <h5 className='margin0'>{title.slice(0 , 30)}</h5>
-                        <p className='margin0 font-playlist'>{creator}</p>
-                        <p className="margin0 font-playlist">{publishedAt}</p>    
+                        <h5 className={styles.playItem.titleText}>{title}</h5>
+                        <p className={styles.playItem.text}>{creator}</p>
+                        <p className={styles.playItem.text}>{publishedAt}</p>    
                     </div> 
                     <div className='delete'
                         onClick={()=> playlistDispatch({type: "REMOVE-TO-PLAYLIST" ,payload: _id})}> <MdDelete className='bars-icon  '/>

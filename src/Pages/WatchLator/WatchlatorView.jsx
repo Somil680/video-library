@@ -1,35 +1,56 @@
 import React from 'react';
- import "./WatchLator.css"
+
 import { Link } from 'react-router-dom';
 import { MdDelete } from "react-icons/md";
 import { useWatchLator } from '../../context';
-function WatchlatorView({ watchVideos }) {
-    const { watchState, watchDispatch } = useWatchLator()
-    const {watchlatorItem} = watchState
-    const { _id, title, iframeId, publishedAt, creator } = watchVideos
-    
-return (<>
-<div key={_id} className="watchlator-videos-container">
-            
-            <div className='video-image-watch'>
-<Link key={_id} to={`/watch=/${_id}`} className="Link">
-                    <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className='video-image-watch' />
-</Link>    
-            </div>
-                
-            <div className='watchlatorvideos-detail'>   
-            <div className='video-detail-watchlator'>
-                    <h5 className='margin0 title1'>{title}</h5>
-                    <h5 className='margin0 title2'>{title.slice(0,30)}</h5>
-                    <p className='margin0 font-watch'>{creator}</p>
-                    <p className="margin0 font-watch">{publishedAt}</p>    
-            </div> 
-            <div className='delete'
-                    onClick={()=> watchDispatch({type: "REMOVE-TO-WATCH-LATOR" ,payload: _id})}> <MdDelete className='bars-icon  '/>
-            </div> 
-            </div>    
-</div>
 
-    </>)
+import "./Watchlater-item.scss"
+
+function WatchlatorView({ watchVideos }) {
+
+    const { watchDispatch } = useWatchLator()
+    const { _id, title, iframeId, publishedAt, creator } = watchVideos
+
+    const styles = {
+        header: "",
+        watchItem: {
+            container: "bfy__watchlater__watchItem-container",
+            thumbnail: "bfy__watchlater__watchItem-thumbnail",
+            details: "bfy__watchlater__watchItem-details",
+            discription: "bfy__watchlater__watchItem-discription",
+            deleteIcon: "bfy__watchlater__watchItem-deleteIcon",
+            titleText1 : "bfy__watchlater__watchItem-titleText1",
+            // titleText2 : "bfy__watchlater__watchItem-titleText2",
+            text: "bfy__watchlater__watchItem-text",
+            
+        }
+    }
+
+    const getWatchlaterView = () => (
+        <div key={_id} className={styles.watchItem.container}>
+            <div>
+                <Link key={_id} to={`/watch=/${_id}`} className="Link">
+                    <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className={styles.watchItem.thumbnail} />
+                </Link>
+            </div>
+            <div className={styles.watchItem.details}>
+                <div className={styles.watchItem.discription}>
+                    <h4 className={styles.watchItem.titleText1}>{title}</h4>
+                    {/* <h4 className={styles.watchItem.titleText2}>{title.slice(0, 30)}</h4> */}
+                    <p className={styles.watchItem.text}>{creator}</p>
+                    <p className={styles.watchItem.text}>{publishedAt}</p>
+                </div>
+                <div className={styles.watchItem.deleteIcon}
+                    onClick={() => watchDispatch({ type: "REMOVE-TO-WATCH-LATOR", payload: _id })}> <MdDelete className='bars-icon  ' />
+                </div>
+            </div>
+        </div>
+    )
+
+    return (
+        <div>
+            {getWatchlaterView()}
+        </div>
+    )
 }
- export {WatchlatorView}
+export { WatchlatorView }

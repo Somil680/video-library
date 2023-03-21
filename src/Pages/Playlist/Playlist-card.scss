@@ -1,6 +1,6 @@
 @media screen and (min-width: 401px) {
 .bfy__playlist{
-    &__plyItem{
+    &__playItem{
         &-discription {
             display: flex;
             width: 400px;
@@ -10,9 +10,21 @@
             display: flex;
             justify-content: space-between;
         }
-        &-tumbnail {
+        &-thumbnail {
             width: 180px;
             border-radius: 10px;
+        }
+        &-titleText{
+            margin: 5px;
+            // display: -webkit-box;
+            // -webkit-box-orient: vertical;
+            // -webkit-line-clamp: 2;
+            // overflow: hidden;
+        }
+        &-text{
+            font-size: 11px;
+            margin: 5px;
+            color: gray;
         }
     }
 }
@@ -20,7 +32,7 @@
 
 @media screen and (max-width: 400px) {
 .bfy__playlist {
-    &__plyItem {
+    &__playItem {
         &-discription {
             display: flex;
             width: 100%;
@@ -30,9 +42,21 @@
             display: flex;
             justify-content: space-between;
         }
-        &-tumbnail {
+        &-thumbnail {
             width: 160px;
             border-radius: 10px;
+        }
+        &-titleText{
+            margin: 5px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        &-text{
+            font-size: 11px;
+            margin: 5px;
+            color: gray;
         }
     }
 }
