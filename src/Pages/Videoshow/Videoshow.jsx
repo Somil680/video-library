@@ -1,58 +1,54 @@
 import React from 'react';
-import "./Videoshow.scss"
+
 import { useParams } from 'react-router-dom';
 import { Navbar, Sidebars } from '../../Components';
 import { VideoshowView } from "./VideoshowView"
 import { useVideos } from '../../context/index';
 import { RecommendVideo } from './RecommendVideo';
 
-
+import "./Videoshow.scss"
 function Videoshow() {
 
     const { videoId } = useParams()
     const { videoState } = useVideos()
     const videoShow = videoState.videos
     const videos = [videoShow.find((element) => element._id === videoId)];
-    const videotag = videos.map((videostged) => videostged.tag)
+    const videotag = videos.map((tags) => tags.tag)
     const tag = videotag.join()
     const tagVideos = videoShow.filter((element) => element.tag === tag);
     const Finalrecommendvideo = tagVideos.filter((ele) => ele._id !== videoId)
 
     const styles = {
-        header: "bfy__videoplayer__header",
-        video_Player: {
-            content : "bfy__video_Player__content"
+        header: "bfy__videoshow__header",
+        videoPlayer: {
+            content: "bfy__videoshow__videoPlayer-content"
         },
-        recommend_Video: {
-            content : "bfy__rec_video_content"
+        recommendVideo: {
+            content: "bfy__videoshow__recommendVideo-content"
         }
     }
 
 
-    const getNavbar = () => (
-    <Navbar/>
-    ) 
-   const getSidebars = () => (
-    <Sidebars />
+    const getVideoPlayerView = () => (
+        <div className={styles.videoPlayer.content}>
+            {videos.map((item) => (<VideoshowView videos={item} videoId={videoId} key={item._id} />))}
+        </div>
     )
-    const getVideoPlayer = () => (
-    <div className={styles.video_Player.content}> 
-        {videos.map((item) =>(<VideoshowView videos={item} videoId={videoId} key={item._id} />  ))}
-    </div> 
-    )
-    const getRecommendVideos = () => (
-    <div className={styles.recommend_Video.content}>
-        {Finalrecommendvideo.map((items) => (<RecommendVideo videos={items} key={items._id} />))}
-    </div>
+    const getRecommendVideoView = () => (
+        <div className={styles.recommendVideo.content}>
+            {Finalrecommendvideo.map((items) => (<RecommendVideo videos={items} key={items._id} />))}
+        </div>
     )
 
-return (<>
-  {getNavbar()}
-  {getSidebars()}
-    <div className={styles.header}> 
-        {getVideoPlayer()}
-        {getRecommendVideos()}
-    </div>
-</>)
+    return (
+        <div>
+            <Navbar />
+            <Sidebars />
+            <div className={styles.header}>
+                {getVideoPlayerView()}
+                {getRecommendVideoView()}
+            </div>
+        </div>
+    )
 }
-export{Videoshow}
+export { Videoshow }
