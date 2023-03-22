@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Library.scss"
 import { Link } from 'react-router-dom';
-import {History, Liked, Navbar, Sidebars} from "../../Components/index"
+import {History, Liked, Navbar, MenuBar} from "../../Components/index"
 import { useHistory, useLike } from '../../context';
 import {AiOutlineHistory , AiOutlineLike} from "react-icons/ai"
 
@@ -50,7 +50,7 @@ function Library() {
 return (
 <div>
  <Navbar/>
- <Sidebars />
+ <MenuBar/>
     <div className={styles.container}>
         {getHistoryView()}
         {getLikedVideo()}

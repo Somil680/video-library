@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Navbar, Sidebars } from '../../Components';
+import { Navbar, MenuBar} from '../../Components';
 import { useWatchLator} from '../../context';
 import {WatchlatorView} from "./WatchlatorView"
 import { WatchlatorFirst } from './WatchlatorFirst';
@@ -48,7 +48,7 @@ function WatchLator() {
 return (
 <div>
     <Navbar />
-    <Sidebars />
+    <MenuBar/>
     <div className={styles.container}>
         {getFirstVideoView()}
         {getContentView()} 

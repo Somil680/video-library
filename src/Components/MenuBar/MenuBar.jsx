@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import "./MenuBar.scss"
 
-const Sidebars = () => {
+const MenuBar = () => {
 
  const styles = {
        container: "bfy__menuBar__container",
@@ -52,4 +52,4 @@ return (
        </div>
        )
 }
-export { Sidebars }
+export {MenuBar}
