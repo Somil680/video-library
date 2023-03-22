@@ -1,7 +1,7 @@
 import "./Empty.css"
 import React from 'react';
 import { Navbar } from "../Navbar/Navbar";
-import { Sidebars } from "../SideBars/Sidebars";
+import { Sidebars } from "../MenuBar/MenuBar";
 import { Emptyimage } from "../../Images";
 
 function Empty() {

@@ -1,5 +1,5 @@
 export { Navbar } from "./Navbar/Navbar"
-export { Sidebars } from "./SideBars/Sidebars"
+export { Sidebars } from "./MenuBar/MenuBar"
 export { ButtonBar } from "./ButtonsBar/ButtonBar"
 export { Empty } from "./Empty/Empty"
 export { PlaylistModal } from "./PlaylistModal/Playlistmodal"
