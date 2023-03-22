@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { findInArray } from '../../Utilis/find';
 import { useHistory } from '../../context';
-import { Link } from 'react-router-dom';
 
 import "./RecommendVideo.scss"
 
@@ -33,7 +33,7 @@ function RecommendVideo({ videos }) {
 
 
 
-    const getRecommend_cardView = () => (
+    const getRecommendedCardView = () => (
         <Link key={_id} to={`/watch=/${_id}`} className="Link" onClick={() => historyHandler()}>
             <div key={_id} className={styles.recommendVideo.discription}>
                 <img src={`https://img.youtube.com/vi/${iframeId}/maxresdefault.jpg `} alt="" className={styles.recommendVideo.thumbnail} />
@@ -50,7 +50,7 @@ function RecommendVideo({ videos }) {
     )
 
     return (<>
-        {getRecommend_cardView()}
+        {getRecommendedCardView()}
 
     </>)
 }

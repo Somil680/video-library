@@ -1,8 +1,8 @@
 import React from 'react';
-
-import { MdDelete } from "react-icons/md";
-import { usePlaylist } from "../../context";
 import { Link } from "react-router-dom";
+import { MdDelete } from "react-icons/md";
+
+import { usePlaylist } from "../../context";
 
 import "./Playlist-card.scss"
 
