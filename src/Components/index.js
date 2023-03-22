@@ -1,6 +1,6 @@
 export { Navbar } from "./Navbar/Navbar"
 export { MenuBar } from "./MenuBar/MenuBar"
-export { ButtonBar } from "./ButtonsBar/ButtonBar"
+export { Chips } from "./Chips/Chips"
 export { Empty } from "./Empty/Empty"
 export { PlaylistModal } from "./PlaylistModal/Playlistmodal"
 export { History } from "./History/Historyvideo"

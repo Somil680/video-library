@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonBar, Navbar, MenuBar } from "../../Components/index";
+import { Navbar, MenuBar, Chips } from "../../Components/index";
 import { useVideos , useFilter  } from "../../context/index";
 import { CategoryFilter } from '../../Utilis/CategoyFilter';
 import { VideoCard } from "./VideoCard";
@@ -34,7 +34,7 @@ const Home = () => {
 return (
    <div className={style.container}>
       <Navbar/>
-      <ButtonBar/>
+      <Chips/>
       <MenuBar />
       {getContentView()}
 </div>)
