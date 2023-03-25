@@ -4,7 +4,7 @@ import { Navbar } from "../Navbar/Navbar";
 import { MenuBar } from "../MenuBar/MenuBar";
 import { Emptyimage } from "../../Images";
 
-import "./Empty.scss"
+import "./empty.scss"
 
 function Empty() {
 
