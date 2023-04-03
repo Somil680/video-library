@@ -51,7 +51,7 @@
                 background-color: var(--nav-color);
             }
         }
-        &__likeCard {
+        &__like_card {
             &-container {
                 width: 125px;
                 margin: 0px 5px;
@@ -69,7 +69,11 @@
                 display: block;
             }
             &-title {
-                margin: 10px;
+                margin: 4px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
             &-text {
                 font-size: 13px;
