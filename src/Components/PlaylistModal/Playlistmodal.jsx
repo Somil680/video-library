@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { usePlaylist } from '../../context';
 import { v4 as uuid } from "uuid"
 
-import "./Playlistmodal.css"
+import "./Playlistmodal.scss"
 
 function PlaylistModal(videos) {
     const { playlistState, playlistDispatch } = usePlaylist()
@@ -36,23 +36,45 @@ function PlaylistModal(videos) {
         }
 
     }
+    const styles = {
+        modal: {
+            container: "bfy__modal__container",
+            content: "bfy__modal__content",
+            title : "bfy__modal__title",
+            input: "bfy__modal__input",
+            itemContainer: "bfy__modal__itemContainer",
+            details: "bfy__modal__details",
+            checkbox: "bfy__modal__checkbox",
+            buttonContainer : "bfy__modal__buttonContainer",
+            button: "bfy__modal__button",
+            cencelButton : "bfy__modal__cencelButton",
+
+
+        }
+    }
     const getModalView = () => (
-        <div className='modal-container'>
-            <div className='input-container'>
-                <h2>Save to ...</h2>
-                <input type="text" className='input-field' placeholder='Create a new playlist' onChange={(e) => addNameInPlaylist(e)} />
-                <button className='inpur-btn' onClick={() => addInPlaylist()}>Create+ </button>
+        <div className={styles.modal.container}>
+            <div className={styles.modal.content}>
+                <h2 className={styles.modal.title}>Save to ...</h2>
+                <input type="text" className={styles.modal.input} placeholder='Create a new playlist' onChange={(e) => addNameInPlaylist(e)} />
+             
             </div>
+            <div className={styles.modal.itemContainer}>
+
             {Playlistitem.map((item, index) => (
-                <div key={item.ID} className="Input-check-box">
+                <div key={item.ID} className={styles.modal.details}>
                     <label htmlFor={`"check"${item.ID}`} onClick={() => addMoreInPlaylist(index, item)} >
-                        <input type="checkbox" className='input' name="" id={`"check"${item.ID}`} />
+                        <input type="checkbox" className={styles.modal.checkbox} name="" id={`"check"${item.ID}`} />
                         {item.name}
                     </label>
                 </div>
             ))
-            }
-            <button className='cencel-btn' onClick={() => playlistDispatch({ type: "CLOSE-MODAL" })}>cancel</button>
+        }
+        </div>
+            <div className={styles.modal.buttonContainer}>
+                <button className={styles.modal.button} onClick={() => addInPlaylist()}>Create+ </button>
+                <button className={styles.modal.cencelButton} onClick={() => playlistDispatch({ type: "CLOSE-MODAL" })}>Cancel</button>
+            </div>
         </div>
     )
     return (

@@ -1,0 +1,160 @@
+@media screen and (min-width: 401px) {
+    .bfy__modal {
+        &__container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 238px;
+            height: 274px;
+            background-color: var(--nav-color);
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px 1px #717171;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+        &__title {
+            margin: 10px;
+        }
+        &__input {
+            margin: 10px;
+            padding: 3px;
+            margin-bottom: 10px;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            color: white;
+        }
+        &__itemContainer {
+            // border: 1px solid;
+            height: 135px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 0.2em;
+                &::-webkit-scrollbar-thumb {
+                    background-color: gray;
+                }
+            }
+        }
+        &__details {
+            padding: 3px 10px;
+        }
+        &__checkbox {
+            color: white;
+        }
+        &__buttonContainer {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__button {
+            width: 45%;
+            padding: 5px;
+            border-radius: 15px;
+            margin-left: 10px;
+            border: 1px solid gray;
+            background-color: var(--nav-color);
+            color: white;
+            &:hover {
+                background-color: var(--btn-bg-color);
+                color: white;
+            }
+        }
+        &__cencelButton {
+            padding: 7px;
+            border-radius: 15px;
+            width: 45%;
+            margin-right: 10px;
+            border: 1px solid gray;
+            background-color: var(--nav-color);
+            color: white;
+            &:hover {
+                background-color: var(--btn-bg-color);
+                color: white;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .bfy__modal {
+        &__container {
+            position: absolute;
+            top: 16%;
+            left: 16%;
+            width: 238px;
+            height: 300px;
+            background-color: var(--nav-color);
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px 1px #717171;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+        &__title {
+            margin: 10px;
+        }
+        &__input {
+            padding: 3px;
+            margin: 10px;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__button {
+            width: 45%;
+            padding: 5px;
+            border-radius: 15px;
+            margin-left: 10px;
+            border: 1px solid gray;
+            background-color: var(--nav-color);
+            color: white;
+            &:hover {
+                background-color: var(--btn-bg-color);
+                color: white;
+            }
+        }
+        &__itemContainer {
+            height: 135px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 0.2em;
+                &::-webkit-scrollbar-thumb {
+                    background-color: gray;
+                }
+            }
+        }
+        &__details {
+            padding: 10px;
+        }
+        &__checkbox {
+            color: white;
+        }
+        &__buttonContainer {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__cencelButton {
+            padding: 7px;
+            border-radius: 15px;
+            width: 45%;
+            margin-right: 10px;
+            border: 1px solid gray;
+            background-color: var(--nav-color);
+            color: white;
+            &:hover {
+                background-color: var(--btn-bg-color);
+                color: white;
+            }
+        }
+    }
+}
