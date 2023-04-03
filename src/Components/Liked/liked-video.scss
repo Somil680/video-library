@@ -1,12 +1,20 @@
 @media screen and (min-width: 401px) {
     .bfy__liked {
         &__container {
-            display: grid;
-            grid-template-columns: auto auto auto auto auto;
+            
+            display: flex;
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                width: 0.2em;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--nav-color);
+            }
         }
         &__like_card {
             &-container {
                 width: 210px;
+                margin-right: 15px;
             }
             &-thumbnail {
                 width: 210px;
