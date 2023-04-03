@@ -60,9 +60,7 @@
             align-items: center
         }
         &-thumbnail {
-            width: 140px;
-            height: 105px;
-            margin-right: 10px;
+            width: 160px;
             border-radius: 10px;
         }
         &-details {
@@ -97,11 +95,8 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: 5px 0px;
+            margin: 5px;
         }
-        //  &-titleText2{
-        //     margin: 5px 0px;
-        // }
     }
 }
 
