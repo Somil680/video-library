@@ -68,11 +68,13 @@
                 border-radius: 29px;
                 width: fit-content;
                 padding: 5px 10px;
+                margin: 4px;
 
                 &:hover {
                     border-radius: 29px;
                     width: fit-content;
                     padding: 5px 10px;
+                    margin: 4px;
                     background-color: var(--btn-bg-hover);
                 }
             }
@@ -162,14 +164,8 @@
                 width:fit-content;
                 margin: 6px;
                 padding: 6px 0px;
+                margin-top: 5px;
 
-                &:hover {
-                    border-radius: 29px;
-                    width: fit-content;
-                    padding: 13px 13px;
-                    margin-top: 5px;
-                    background-color: var(--btn-bg-hover);
-                }
             }
         }
     }
