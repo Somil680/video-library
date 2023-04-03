@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import { usePlaylist } from "../../context"
-import { Navbar, Sidebars } from "../../Components"
+import { Navbar, MenuBar } from "../../Components"
 import { Playlistcard } from "./Playlistcard"
 
 import "./Playlist.scss"
@@ -60,7 +60,7 @@ function Playlist() {
 
     return (<div>
         <Navbar />
-        <Sidebars />
+        <MenuBar/>
         <div className={styles.header}>
             {getPlaylist()}
             {getPlaylistItem()}

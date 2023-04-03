@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Navbar, Sidebars } from '../../Components';
+import { Navbar, MenuBar} from '../../Components';
 import { VideoshowView } from "./VideoshowView"
 import { useVideos } from '../../context/index';
 import { RecommendVideo } from './RecommendVideo';
@@ -58,7 +58,7 @@ function Videoshow() {
     return (
         <div>
             <Navbar />
-            <Sidebars />
+            <MenuBar/>
             <div className={styles.header}>
                 {getVideoPlayerView()}
                 {getRecommendVideoView()}

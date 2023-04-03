@@ -1,40 +1,38 @@
-import "./Historyvideo.css"
+import React from 'react';
+
 import { useHistory } from "../../context"
-import { Link } from "react-router-dom"
-import { HiDotsVertical } from "react-icons/hi";
+
+import "./history-video.scss"
+import { Historyvideocard } from './Historyvideocard';
 
 function History() {
 
     const { historyState } = useHistory()
-    const {historyItem} = historyState
-    // console.log(historyItem)
-    
-let ActualhistoryItem = historyItem.map((_, index, originalArray) => {
-  return originalArray[originalArray.length - 1 - index];
-});
-// console.log(ActualhistoryItem);
+    const { historyItem } = historyState
 
-return (<>
-<div className="main-history-body-container">
-    {ActualhistoryItem.map((item) => (
-    <div key={item._id} className="history-video-container">
-        <Link to={`/watch=/${item._id }`} className="Link">
-                <img src={`https://img.youtube.com/vi/${item.iframeId}/maxresdefault.jpg `} alt="" className='history-video-image' />
-        </Link>
-        <div className='history-video-detail'>
-        <span className='content-detail'>
-            <h5 className='margin0'>{item.title.slice(0, 29)}</h5>
-        
-            <p className='margin0 history-font' >{item.creator}</p>
-        </span>
-        <span className='DotsVertical'>
-            <HiDotsVertical className='bars-icon  '/>
-        </span> 
-        </div> 
-   
-    </div>
-))}  
-</div>    
-</>)
+    let ActualhistoryItem = historyItem.map((_, index, originalArray) => {
+        return originalArray[originalArray.length - 1 - index];
+    });
+
+    const styles = {
+        container: "bfy__history__container",
+    }
+
+    const getHistoryCardView = (historyVideo) => (
+        <Historyvideocard
+            Videos={historyVideo}
+            key={historyVideo._id}
+        />
+    )
+
+    const getHistoryVideoView = () => (
+        <div className={styles.container}>
+            {ActualhistoryItem.map(getHistoryCardView)}
+        </div>
+    )
+
+    return (<div>
+        {getHistoryVideoView()}
+    </div>)
 }
-export {History}
+export { History }
