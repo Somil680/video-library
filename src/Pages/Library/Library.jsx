@@ -1,15 +1,16 @@
 import React from 'react';
-import "./Library.scss"
 import { Link } from 'react-router-dom';
-import {History, Liked, Navbar, MenuBar} from "../../Components/index"
-import { useHistory, useLike } from '../../context';
 import {AiOutlineHistory , AiOutlineLike} from "react-icons/ai"
 
+
+import { useVideoLibraryHook } from '../../context';
+import {History, Liked, Navbar, MenuBar} from "../../Components/index"
+
+import "./Library.scss"
+
 function Library() {
-    const { historyState } = useHistory()
-    const { historyItem } = historyState
-    const { likeState } = useLike()
-    const { likeItem } = likeState
+    const { State } = useVideoLibraryHook()
+    const { historyItem , likeItem } = State
 
     const styles = {
         container: "bfy__library__container",
@@ -23,7 +24,6 @@ function Library() {
         }
     }
 
-  
     const getHistoryView = () => (
     <div>
         <span className={styles.content.heading} >

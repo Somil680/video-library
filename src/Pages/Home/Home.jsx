@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Navbar, MenuBar, Chips } from "../../Components/index";
-import { useVideos , useFilter  } from "../../context/index";
+import { useVideos , useVideoLibraryHook  } from "../../context/index";
 import { CategoryFilter } from '../../Utilis/CategoyFilter';
 import { VideoCard } from "./VideoCard";
 
@@ -9,9 +9,10 @@ import "./Home.scss"
 
 const Home = () => {
    const { videoState } = useVideos()
-   const { filterState } =useFilter()
+   const { State } = useVideoLibraryHook()
+   
    const  videodata  = [...videoState.videos]
-   const categorydata = CategoryFilter([...videodata] , filterState.Category)
+   const categorydata = CategoryFilter([...videodata] , State.Category)
    
    const style = {
       container : "",

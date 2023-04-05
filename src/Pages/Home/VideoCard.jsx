@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { HiDotsVertical } from "react-icons/hi";
-import { Link } from 'react-router-dom';
-import { useHistory } from '../../context';
+import { useVideoLibraryHook } from '../../context';
 import { findInArray } from '../../Utilis/find';
 
 import "./Video-card.scss"
+
 const VideoCard = ({ videos }) => {
     
     const styles = {
@@ -21,18 +22,17 @@ const VideoCard = ({ videos }) => {
     }
 
 const { _id, iframeId, title, creator, } = videos
-const {historyState , historyDispatch } = useHistory()
-const {historyItem} = historyState
+const {State , Dispatch } = useVideoLibraryHook()
+    const { historyItem } = State
 const isInHistory  = findInArray(_id , historyItem)
 function historyHandler() {
     if (!isInHistory) {  
-        historyDispatch({
+        Dispatch({
             type: "ADD-TO-HISTORY",
             payload : videos
         }) 
     }
 }
-    
     const getVideoView = () => (
     <div className={styles.cardView.container} key={_id}>
         <Link to={`/watch=/${_id}`} className="Link" onClick={() => historyHandler()}>

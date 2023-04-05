@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { MdPlayArrow } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 
@@ -20,7 +19,6 @@ function WatchlatorFirst({ Firstvideo, Noofvideos }) {
             btnText: "bfy__watchlater__watchFirst-btnText"
         }
     }
-
     const getWatchlaterFirstView = () => (
         <div className={styles.watchFirst.container}>
             <div className={styles.watchFirst.content}>
@@ -29,17 +27,13 @@ function WatchlatorFirst({ Firstvideo, Noofvideos }) {
                 <p className={styles.watchFirst.textColor}>{noofvideos} videos No views Updated today</p>
                 <Link key={_id} to={`/watch=/${_id}`} className="Link">
                     <span className={styles.watchFirst.button}>
-
                         <MdPlayArrow className={styles.watchFirst.icons} />
-
                         <p className={styles.watchFirst.btnText}>Play Now</p>
                     </span>
                 </Link>
             </div>
         </div>
-
     )
-
 return (
     <div>
         {getWatchlaterFirstView()}

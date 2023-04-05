@@ -1,14 +1,14 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import { MdDelete } from "react-icons/md";
-import { useWatchLator } from '../../context';
+
+import { useVideoLibraryHook} from '../../context';
 
 import "./Watchlater-item.scss"
 
 function WatchlatorView({ watchVideos }) {
 
-    const { watchDispatch } = useWatchLator()
+    const { Dispatch } = useVideoLibraryHook()
     const { _id, title, iframeId, publishedAt, creator } = watchVideos
 
     const styles = {
@@ -20,12 +20,9 @@ function WatchlatorView({ watchVideos }) {
             discription: "bfy__watchlater__watchItem-discription",
             deleteIcon: "bfy__watchlater__watchItem-deleteIcon",
             titleText1 : "bfy__watchlater__watchItem-titleText1",
-            // titleText2 : "bfy__watchlater__watchItem-titleText2",
             text: "bfy__watchlater__watchItem-text",
-            
         }
     }
-
     const getWatchlaterView = () => (
         <div key={_id} className={styles.watchItem.container}>
             <div>
@@ -36,17 +33,15 @@ function WatchlatorView({ watchVideos }) {
             <div className={styles.watchItem.details}>
                 <div className={styles.watchItem.discription}>
                     <h4 className={styles.watchItem.titleText1}>{title}</h4>
-                    {/* <h4 className={styles.watchItem.titleText2}>{title.slice(0, 30)}</h4> */}
                     <p className={styles.watchItem.text}>{creator}</p>
                     <p className={styles.watchItem.text}>{publishedAt}</p>
                 </div>
                 <div className={styles.watchItem.deleteIcon}
-                    onClick={() => watchDispatch({ type: "REMOVE-TO-WATCH-LATOR", payload: _id })}> <MdDelete className='bars-icon  ' />
+                    onClick={() => Dispatch({ type: "REMOVE-TO-WATCH-LATOR", payload: _id })}> <MdDelete className='bars-icon  ' />
                 </div>
             </div>
         </div>
     )
-
     return (
         <div>
             {getWatchlaterView()}

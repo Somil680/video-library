@@ -2,19 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { findInArray } from '../../Utilis/find';
-import { useHistory } from '../../context';
+import { useVideoLibraryHook } from '../../context';
 
 import "./RecommendVideo.scss"
 
 function RecommendVideo({ videos }) {
     const { _id, title, iframeId, publishedAt, creator } = videos
-    const { historyState, historyDispatch } = useHistory()
-    const { historyItem } = historyState
+    const { State, Dispatch } = useVideoLibraryHook()
+    const { historyItem } = State
 
     const isInHistory = findInArray(_id, historyItem)
     function historyHandler() {
         if (!isInHistory) {
-            historyDispatch({
+            Dispatch({
                 type: "ADD-TO-HISTORY",
                 payload: videos
             })

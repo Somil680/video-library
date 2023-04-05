@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { usePlaylist } from "../../context"
+import { useVideoLibraryHook } from "../../context"
 import { Navbar, MenuBar } from "../../Components"
 import { Playlistcard } from "./Playlistcard"
 
@@ -9,9 +9,9 @@ import "./Playlist.scss"
 function Playlist() {
 
     const [data, setData] = useState([])
-    const { playlistState } = usePlaylist()
-    const { Playlistitem } = playlistState
-    console.log(data)
+    const { State } = useVideoLibraryHook()
+    const { Playlistitem } = State
+    
     const styles = {
         header: "bfy__playlist__header",
         playCard: {
@@ -27,7 +27,7 @@ function Playlist() {
         }
     }
 
-    function Callfunction(item) {
+    function showPlaylist(item) {
         setData(item.Videos)
     }
 
@@ -42,7 +42,7 @@ function Playlist() {
                     <h1>{item.name}</h1>
                     <p className={styles.playCard.font} >{item.Videos.length} video</p>
                 </div>
-                <button className={styles.playCard.button} onClick={() => Callfunction(item)} >View All</button>
+                <button className={styles.playCard.button} onClick={() => showPlaylist(item)} >View All</button>
             </div>))}
         </div>
     )

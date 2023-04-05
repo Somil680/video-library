@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/lazy'
 import { AiOutlineLike, AiFillLike, AiOutlineDislike } from "react-icons/ai"
 import { MdOutlineWatchLater, MdPlaylistAdd, MdDone } from 'react-icons/md'
 
-import { useLike, usePlaylist, useWatchLator } from '../../context';
+import {  useVideoLibraryHook } from '../../context';
 import { findInArray } from '../../Utilis/find';
 import { PlaylistModal } from '../../Components/index';
 
@@ -14,20 +14,18 @@ function VideoshowView({ videos, videoId }) {
     const [isExpanded, setIsExpanded] = useState(false)
     function toggleExpanded() { setIsExpanded(!isExpanded) }
     const { _id, iframeId, title, description, creator, publishedAt } = videos
-    const { watchState, watchDispatch } = useWatchLator()
-    const { watchlatorItem } = watchState
-    const { playlistState, playlistDispatch } = usePlaylist()
-    const { likeState, likeDispatch } = useLike()
-    const { likeItem } = likeState
+
+    const { State, Dispatch } = useVideoLibraryHook()
+    const { likeItem , watchlatorItem ,   } = State
 
     const isInWatchlator = findInArray(_id, watchlatorItem)
     const watchHandler = (videos, _id) => {
         if (isInWatchlator) {
-            watchDispatch({
+            Dispatch({
                 type: "REMOVE-TO-WATCH-LATOR", payload: _id
             })
         } else {
-            watchDispatch({
+            Dispatch({
                 type: "SAVE-TO-WATCH-LATOR", payload: videos
             })
         }
@@ -35,19 +33,19 @@ function VideoshowView({ videos, videoId }) {
     const isInLike = findInArray(_id, likeItem)
     const likeHandler = (videos, _id) => {
         if (isInLike) {
-            likeDispatch({
+            Dispatch({
                 type: "REMOVE-TO-LIKE",
                 payload: _id
             })
         } else {
-            likeDispatch({
+            Dispatch({
                 type: "ADD-TO-LIKE",
                 payload: videos
             })
         }
     }
     const playlistHandler = () => {
-        playlistDispatch({
+        Dispatch({
             type: "OPEN-MODAL",
         })
     }
@@ -65,11 +63,9 @@ function VideoshowView({ videos, videoId }) {
             showButton : "bfy__videoshow__videoPlayer-showButton"
         },
     }
-
     const getModal = () => (
-        playlistState.isModal ? <PlaylistModal Newvideo={videos} /> : <p></p>
+        State.isModal ? <PlaylistModal Newvideo={videos} /> : <p></p>
     )
-
     const getVideoplayer = () => (
         <div key={videoId}>
             <div>

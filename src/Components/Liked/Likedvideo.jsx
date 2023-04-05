@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { useLike } from '../../context';
+import { useVideoLibraryHook } from '../../context';
 import { Likedvideocard } from './LikedVideoCard';
 
 import "./liked-video.scss"
 
 function Liked() {
 
-    const { likeState } = useLike()
-    const { likeItem } = likeState
+    const { State } = useVideoLibraryHook()
+    const { likeItem } = State
 
     const styles = {
         container: "bfy__liked__container",

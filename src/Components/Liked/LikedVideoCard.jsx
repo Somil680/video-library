@@ -8,7 +8,6 @@ function Likedvideocard({Videos}) {
 
     const { _id, iframeId, title, creator, } = Videos
 
-
     const styles = {
         like_card: {
             container: "bfy__liked__like_card-container",
@@ -20,7 +19,6 @@ function Likedvideocard({Videos}) {
             icon:"bfy__liked__like_card-icon"
         }
     }
-
      const getLikedVideoCardView = () => (
         <div key={_id} className={styles.like_card.container}>
             <Link to={`/watch=/${_id}`} className="Link">

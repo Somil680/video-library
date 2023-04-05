@@ -1,4 +1,3 @@
-
 function CategoryFilter( video , Category) {
     switch (Category) {
         case "Coding":
@@ -17,9 +16,6 @@ function CategoryFilter( video , Category) {
             return [...video.filter((item) => item.tag === "Spirituality")]
         case "Mystery":
             return [...video.filter((item) => item.tag === "Mystery")]
-            
-         
-    
         default:
             return video
     }

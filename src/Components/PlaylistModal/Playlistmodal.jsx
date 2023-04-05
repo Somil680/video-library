@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-
-import { usePlaylist } from '../../context';
 import { v4 as uuid } from "uuid"
+
+import { useVideoLibraryHook } from '../../context';
 
 import "./Playlistmodal.scss"
 
 function PlaylistModal(videos) {
-    const { playlistState, playlistDispatch } = usePlaylist()
-    const { Playlistitem } = playlistState
+    const { State, Dispatch } = useVideoLibraryHook()
+    const { Playlistitem } = State
     const [name, setName] = useState('')
     const { Newvideo } = videos
 
@@ -17,16 +17,16 @@ function PlaylistModal(videos) {
     }
     // YE FUNCTION ADD BUTTON PE CLICK HONE SE TIGGERED HOTA AUR SAARA DATA PLAYLIST ME SAVE HOJATA HAI !
     const addInPlaylist = () => {
-        playlistDispatch({
+        Dispatch({
             type: "ADD-ITEM",
             payload: { ID: uuid(), name, Videos: [Newvideo] }
         })
     }
     // YE FUNCTION EK NAYI VIDEO KO EXISTING PLAYLIST ME DALTA HAI !
     const addMoreInPlaylist = (index, item) => {
-        const isInPlaylist = playlistState.Playlistitem.find((ele) => ele.ID === item.ID)
+        const isInPlaylist = State.Playlistitem.find((element) => element.ID === item.ID)
         if (isInPlaylist) {
-            playlistDispatch({
+            Dispatch({
                 type: "ADD-MORE-ITEM",
                 payload: { Videos: [Newvideo] },
                 index: index
@@ -48,8 +48,6 @@ function PlaylistModal(videos) {
             buttonContainer : "bfy__modal__buttonContainer",
             button: "bfy__modal__button",
             cencelButton : "bfy__modal__cencelButton",
-
-
         }
     }
     const getModalView = () => (
@@ -73,7 +71,7 @@ function PlaylistModal(videos) {
         </div>
             <div className={styles.modal.buttonContainer}>
                 <button className={styles.modal.button} onClick={() => addInPlaylist()}>Create+ </button>
-                <button className={styles.modal.cencelButton} onClick={() => playlistDispatch({ type: "CLOSE-MODAL" })}>Cancel</button>
+                <button className={styles.modal.cencelButton} onClick={() => Dispatch({ type: "CLOSE-MODAL" })}>Cancel</button>
             </div>
         </div>
     )

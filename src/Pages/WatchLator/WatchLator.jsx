@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { Navbar, MenuBar} from '../../Components';
-import { useWatchLator} from '../../context';
+import { useVideoLibraryHook} from '../../context';
 import {WatchlatorView} from "./WatchlatorView"
 import { WatchlatorFirst } from './WatchlatorFirst';
 
 import "./WatchLator.scss"
 function WatchLator() {
 
-    const { watchState } = useWatchLator()
-    const { watchlatorItem } = watchState
+    const { State } = useVideoLibraryHook()
+    const { watchlatorItem } = State
     const FirstVideo = [watchlatorItem[0]]
 
     const styles = {

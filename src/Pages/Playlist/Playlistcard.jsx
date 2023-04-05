@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
-import { usePlaylist } from "../../context";
+import {useVideoLibraryHook } from "../../context";
 
 import "./Playlist-card.scss"
 
 function Playlistcard({playitem}) {
-    const { playlistDispatch } = usePlaylist()
+    const { Dispatch } = useVideoLibraryHook()
     const { _id, title, iframeId, publishedAt, creator } = playitem
 
     const styles = {
@@ -35,7 +35,7 @@ function Playlistcard({playitem}) {
                         <p className={styles.playItem.text}>{publishedAt}</p>    
                     </div> 
                     <div className='delete'
-                        onClick={()=> playlistDispatch({type: "REMOVE-TO-PLAYLIST" ,payload: _id})}> <MdDelete className='bars-icon  '/>
+                        onClick={()=> Dispatch({type: "REMOVE-TO-PLAYLIST" ,payload: _id})}> <MdDelete className='bars-icon  '/>
                     </div> 
                 </div>
             </div>

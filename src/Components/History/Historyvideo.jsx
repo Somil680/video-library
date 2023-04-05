@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { useHistory } from "../../context"
+import { useVideoLibraryHook } from "../../context"
+import { Historyvideocard } from './Historyvideocard';
 
 import "./history-video.scss"
-import { Historyvideocard } from './Historyvideocard';
 
 function History() {
 
-    const { historyState } = useHistory()
-    const { historyItem } = historyState
+    const { State } = useVideoLibraryHook()
+    const { historyItem } = State
 
     let ActualhistoryItem = historyItem.map((_, index, originalArray) => {
         return originalArray[originalArray.length - 1 - index];
